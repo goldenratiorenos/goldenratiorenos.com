@@ -275,7 +275,9 @@
 
           <div class="contact-form-container reveal reveal-delay-2">
             <!-- Lead Generation Form -->
-            <form id="contact-form" action="/api/contact" method="POST" novalidate>
+            <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+              <input type="hidden" name="form-name" value="contact">
+              <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
               <p class="form-instructions">All fields are required to help us prepare your consultation details.</p>
 
               <!-- Form Feedback Box -->

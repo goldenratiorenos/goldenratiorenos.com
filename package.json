@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "build": "echo 'Static build ready'",
     "test": "node --test --test-concurrency=1 tests/*.test.js"
   },
   "dependencies": {

@@ -437,19 +437,39 @@
       };
 
       try {
-        const res = await fetch('/api/contact', {
-          method:  'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body:    JSON.stringify(payload),
-        });
+        let success = false;
+        try {
+          const res = await fetch('/api/contact', {
+            method:  'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body:    JSON.stringify(payload),
+          });
 
-        const data = await res.json();
+          if (res.ok) {
+            const data = await res.json();
+            if (data && data.success) success = true;
+          }
+        } catch (apiErr) {
+          // If Express API is unavailable (static host / Netlify), fallback below
+        }
 
-        if (res.ok && data.success) {
+        if (!success) {
+          const formData = new FormData(form);
+          const netlifyRes = await fetch('/', {
+            method:  'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body:    new URLSearchParams(formData).toString(),
+          });
+          if (netlifyRes.ok) {
+            success = true;
+          }
+        }
+
+        if (success) {
           showFeedback('success', '✓ Thank you! Your request has been received. Ali will be in touch within 24–48 hours.');
           form.reset();
         } else {
-          showFeedback('error-msg', data.message || 'Something went wrong. Please try again.');
+          showFeedback('error-msg', 'Something went wrong. Please try again.');
         }
       } catch (err) {
         showFeedback('error-msg', 'Network error. Please check your connection and try again.');

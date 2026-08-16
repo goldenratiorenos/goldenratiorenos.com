@@ -1,0 +1,9 @@
+[build]
+  publish = "public"
+  command = "echo 'Static build ready'"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
