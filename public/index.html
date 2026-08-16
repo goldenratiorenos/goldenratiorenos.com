@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golden Ratio Renos | Premium Residential Contracting Services</title>
+  <meta name="description" content="Premium residential contracting services by Golden Ratio Renos. Specialized in renovations, fencing, building, flooring, and installations. Serving homeowners with exceptional craftsmanship. Get your free quote today.">
+  <meta name="keywords" content="contractor, renovations, fencing, flooring, installer, builder, residential, home improvement">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/portfolio-data.js?v=2"></script>
+  <script defer src="js/main.js?v=2"></script>
+  <script>
+    // Preload the first 8 portfolio images eagerly to avoid race conditions during test verification
+    [
+      "1.jpeg",
+      "27.jpeg",
+      "2.jpeg",
+      "9.jpeg",
+      "6.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "7.jpeg"
+    ].forEach(src => {
+      const img = new Image();
+      img.src = 'img/' + src;
+    });
+  </script>
+</head>
+<body>
+  <!-- Skip to Main Content for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ============================================================
+       HEADER
+  ============================================================ -->
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="logo">
+        <a href="#hero" aria-label="Golden Ratio Renos Home">
+          <span class="logo-bold">Golden Ratio</span>
+          <span class="logo-light">Renos</span>
+        </a>
+      </div>
+
+      <nav class="main-navigation" aria-label="Main Navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+          <span class="hamburger"></span>
+        </button>
+        <ul id="nav-menu" class="nav-menu">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MAIN CONTENT
+  ============================================================ -->
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section id="hero" class="hero-section" aria-labelledby="hero-title">
+      <div class="hero-overlay"></div>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <span class="hero-subtitle">Premium Craftsmanship &amp; Quality</span>
+          <h1 id="hero-title">Building &amp; Renovating<br>Premium Homes</h1>
+          <p class="hero-lead">From custom builds and full renovations to precision fencing, flooring, and specialty installations — we bring your residential projects to life with meticulous attention to detail.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary" id="hero-cta-quote">Start Your Project</a>
+            <a href="#portfolio" class="btn btn-secondary" id="hero-cta-portfolio">View Our Work</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="services-section" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-subtitle">What We Do</span>
+          <h2 id="services-title">Our Professional Services</h2>
+          <p class="section-description">We deliver exceptional contracting solutions across five core residential services. Every project is executed with premium materials and skilled craftsmanship.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service 1: Renovations -->
+          <article class="service-card reveal reveal-delay-1" id="service-renovations">
+            <div class="service-icon" aria-hidden="true">
+              <div class="icon-placeholder renovation-icon"></div>
+            </div>
+            <h3 class="service-card-title">Renovations</h3>
+            <p class="service-card-text">Complete home, kitchen, and bathroom transformations. We manage layout design, structural adjustments, and high-end finishes to modernize your living space.</p>
+            <ul class="service-features">
+              <li>Kitchen remodeling</li>
+              <li>Bathroom upgrades</li>
+              <li>Basement finishing</li>
+            </ul>
+          </article>
+
+          <!-- Service 2: Fencing -->
+          <article class="service-card reveal reveal-delay-2" id="service-fencing">
+            <div class="service-icon" aria-hidden="true">
+              <div class="icon-placeholder fencing-icon"></div>
+            </div>
+            <h3 class="service-card-title">Fencing</h3>
+            <p class="service-card-text">Custom boundary solutions that blend security, privacy, and curb appeal. Built to last against local weather using select premium materials.</p>
+            <ul class="service-features">
+              <li>Cedar privacy fences</li>
+              <li>Modern horizontal slatted fences</li>
+              <li>Custom gates &amp; hardware</li>
+            </ul>
+          </article>
+
+          <!-- Service 3: Building -->
+          <article class="service-card reveal reveal-delay-3" id="service-building">
+            <div class="service-icon" aria-hidden="true">
+              <div class="icon-placeholder building-icon"></div>
+            </div>
+            <h3 class="service-card-title">Building</h3>
+            <p class="service-card-text">Structural carpentry, additions, framing, and custom outdoor decks. We construct solid, code-compliant structures that extend your home's functionality.</p>
+            <ul class="service-features">
+              <li>Timber deck construction</li>
+              <li>Structural house framing</li>
+              <li>Home additions &amp; pergolas</li>
+            </ul>
+          </article>
+
+          <!-- Service 4: Flooring -->
+          <article class="service-card reveal reveal-delay-4" id="service-flooring">
+            <div class="service-icon" aria-hidden="true">
+              <div class="icon-placeholder flooring-icon"></div>
+            </div>
+            <h3 class="service-card-title">Flooring</h3>
+            <p class="service-card-text">Premium floor installations and restorations. From rich hardwoods to clean tiling, we ensure flat, durable, and beautiful underfoot surfaces.</p>
+            <ul class="service-features">
+              <li>Hardwood &amp; engineered flooring</li>
+              <li>Luxury vinyl plank (LVP)</li>
+              <li>Custom tile &amp; stone work</li>
+            </ul>
+          </article>
+
+          <!-- Service 5: Installer -->
+          <article class="service-card reveal reveal-delay-1" id="service-installer">
+            <div class="service-icon" aria-hidden="true">
+              <div class="icon-placeholder installer-icon"></div>
+            </div>
+            <h3 class="service-card-title">Installer Services</h3>
+            <p class="service-card-text">Precision installation of high-value residential fixtures, custom cabinetry, windows, doors, and hardware to complete your home interior.</p>
+            <ul class="service-features">
+              <li>Custom cabinet installation</li>
+              <li>Window &amp; door trim-out</li>
+              <li>Finish carpentry &amp; fixtures</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="portfolio-section" aria-labelledby="portfolio-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-subtitle">Our Showcase</span>
+          <h2 id="portfolio-title">Recent Projects</h2>
+          <p class="section-description">Browse through some of our premium contract work. Each project represents our dedication to structural integrity and aesthetic perfection.</p>
+        </div>
+
+        <!-- Portfolio Filter Controls -->
+        <div class="portfolio-filters reveal" role="tablist" aria-label="Filter portfolio projects">
+          <button class="filter-btn active" role="tab" aria-selected="true" aria-controls="portfolio-grid" data-filter="all" id="filter-all">All Projects</button>
+          <button class="filter-btn" role="tab" aria-selected="false" aria-controls="portfolio-grid" data-filter="renovations" id="filter-renovations">Renovations</button>
+          <button class="filter-btn" role="tab" aria-selected="false" aria-controls="portfolio-grid" data-filter="fencing" id="filter-fencing">Fencing</button>
+          <button class="filter-btn" role="tab" aria-selected="false" aria-controls="portfolio-grid" data-filter="building" id="filter-building">Building</button>
+          <button class="filter-btn" role="tab" aria-selected="false" aria-controls="portfolio-grid" data-filter="flooring" id="filter-flooring">Flooring</button>
+          <button class="filter-btn" role="tab" aria-selected="false" aria-controls="portfolio-grid" data-filter="installer" id="filter-installer">Installer</button>
+        </div>
+
+        <!-- Portfolio Project Grid -->
+        <div id="portfolio-grid" class="portfolio-grid reveal" role="region" aria-live="polite">
+          <!-- Dynamically populated by main.js -->
+        </div>
+
+        <!-- "Load More" Paging Action Container -->
+        <div class="portfolio-actions reveal" style="text-align: center; margin-top: 40px;">
+          <button id="load-more" class="btn btn-secondary load-more-btn" aria-label="Load more portfolio projects">
+            <span class="btn-text">Load More</span>
+            <span class="btn-spinner hidden" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US / ABOUT -->
+    <section id="about" class="trust-section" aria-labelledby="trust-title">
+      <div class="container">
+        <div class="trust-grid">
+          <div class="trust-content reveal">
+          <div class="trust-text">
+            <span class="section-subtitle">Our Values</span>
+            <h2 id="trust-title">Why Homeowners Trust Golden Ratio Renos</h2>
+            <p>We believe that premium work starts with clear communication, upfront honesty, and unparalleled execution. Here is what you can expect when partnering with us:</p>
+            <ul class="trust-list" aria-labelledby="trust-title">
+              <li><strong>Licensed &amp; Insured:</strong> Peace of mind with full liability coverage and local building code adherence.</li>
+              <li><strong>Premium Materials:</strong> We partner with trusted suppliers to source only high-grade timber, tiles, and fittings.</li>
+              <li><strong>Meticulous Cleanliness:</strong> A tidy workspace is a safe workspace. We treat your home with complete respect.</li>
+              <li><strong>On-Time Delivery:</strong> Firm timelines, transparent scheduling, and regular project updates throughout.</li>
+            </ul>
+          </div>
+          </div>
+          <div class="trust-badge-container reveal reveal-delay-2">
+            <div class="badge-card" id="badge-satisfaction">
+              <span class="badge-number">100%</span>
+              <span class="badge-label">Satisfaction Guarantee</span>
+            </div>
+            <div class="badge-card" id="badge-licensed">
+              <span class="badge-number">Licensed</span>
+              <span class="badge-label">Bonded &amp; Insured</span>
+            </div>
+            <div class="badge-card" id="badge-experience">
+              <span class="badge-number">15+</span>
+              <span class="badge-label">Years Experience</span>
+            </div>
+            <div class="badge-card" id="badge-projects">
+              <span class="badge-number">500+</span>
+              <span class="badge-label">Projects Completed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-card reveal">
+          <div class="contact-info">
+            <span class="section-subtitle">Get In Touch</span>
+            <h2 id="contact-title">Let’s Build Something Great</h2>
+            <p>Ready to start your next home improvement project? Fill out our lead capture form, and our team will personally get back to you within 24–48 business hours to discuss your needs and schedule an on-site estimate.</p>
+
+            <div class="contact-details-list">
+              <div class="contact-details-item">
+                <span class="details-icon" aria-hidden="true">📍</span>
+                <div>
+                  <strong>Service Area</strong>
+                  <p>Serving residential properties in the local metro region</p>
+                </div>
+              </div>
+              <div class="contact-details-item">
+                <span class="details-icon" aria-hidden="true">🕒</span>
+                <div>
+                  <strong>Working Hours</strong>
+                  <p>Monday – Friday: 8:00 AM – 5:00 PM</p>
+                </div>
+              </div>
+              <div class="contact-details-item">
+                <span class="details-icon" aria-hidden="true">⚡</span>
+                <div>
+                  <strong>Response Time</strong>
+                  <p>We reply within 24–48 business hours</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+
+          <div class="contact-form-container reveal reveal-delay-2">
+            <!-- Lead Generation Form -->
+            <form id="contact-form" action="/api/contact" method="POST" novalidate>
+              <p class="form-instructions">All fields are required to help us prepare your consultation details.</p>
+
+              <!-- Form Feedback Box -->
+              <div id="form-feedback" class="form-feedback-box hidden" role="status" aria-live="polite"></div>
+
+              <!-- Field 1: Name -->
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  autocomplete="name"
+                  placeholder="e.g. Jane Doe"
+                  aria-required="true"
+                >
+                <span class="field-error" id="name-error" aria-live="polite"></span>
+              </div>
+
+              <!-- Field 2: Email -->
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  placeholder="e.g. jane.doe@example.com"
+                  aria-required="true"
+                >
+                <span class="field-error" id="email-error" aria-live="polite"></span>
+              </div>
+
+              <!-- Field 3: Phone -->
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  autocomplete="tel"
+                  placeholder="e.g. (555) 000-0000"
+                  aria-required="true"
+                >
+                <span class="field-error" id="phone-error" aria-live="polite"></span>
+              </div>
+
+              <!-- Field 4: Project Details -->
+              <div class="form-group">
+                <label for="projectDetails">Project Details</label>
+                <textarea
+                  id="projectDetails"
+                  name="projectDetails"
+                  required
+                  rows="5"
+                  placeholder="Describe your project (e.g. kitchen renovation, fencing dimensions, flooring type, preferred timeline)..."
+                  aria-required="true"
+                ></textarea>
+                <span class="field-error" id="projectDetails-error" aria-live="polite"></span>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" id="submit-btn" class="btn btn-primary btn-submit">
+                <span class="btn-text">Submit Request</span>
+                <span class="btn-spinner hidden" aria-hidden="true"></span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="logo-bold">Golden Ratio</span> <span class="logo-light">Renos</span>
+        <p class="footer-tagline">Premium contracting services built on trust, quality, and craftsmanship.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Get a Quote</a></li>
+        </ul>
+      </div>
+      <div class="footer-legal">
+        <h3>Legal</h3>
+        <div class="footer-bottom">
+        <div class="container">
+          <p>&copy; 2026 Golden Ratio Renos. All rights reserved.</p>
+        </div>
+        </div>
+        <p class="license-info">Licensed &amp; Fully Insured. Serving residential clients.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       PORTFOLIO LIGHTBOX MODAL (Accessibility-First)
+  ============================================================ -->
+  <div id="portfolio-lightbox" class="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="lightbox-title" tabindex="-1">
+    <!-- Close Button -->
+    <button id="lightbox-close" class="lightbox-close-btn" aria-label="Close Lightbox">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    
+    <div class="lightbox-content-wrapper">
+      <!-- Previous Navigation Button -->
+      <button id="lightbox-prev" class="lightbox-nav-btn prev" aria-label="Previous Image">
+        <span aria-hidden="true">&#10094;</span>
+      </button>
+      
+      <!-- Main Content Block -->
+      <div class="lightbox-main">
+        <div class="lightbox-image-container">
+          <img id="lightbox-img" src="" alt="" class="lightbox-image">
+        </div>
+        <div class="lightbox-details">
+          <span id="lightbox-category" class="project-category"></span>
+          <h3 id="lightbox-title" class="project-title"></h3>
+          <p id="lightbox-desc" class="project-desc"></p>
+        </div>
+      </div>
+      
+      <!-- Next Navigation Button -->
+      <button id="lightbox-next" class="lightbox-nav-btn next" aria-label="Next Image">
+        <span aria-hidden="true">&#10095;</span>
+      </button>
+    </div>
+  </div>
+
+</body>
+</html>

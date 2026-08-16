@@ -1,0 +1,140 @@
+{
+  "projects": {
+    "Madani Estate Backyard Pavilion": {
+      "title": "Madani Estate Backyard Pavilion",
+      "category": "building",
+      "coverImage": "21.jpeg",
+      "description": "Custom outdoor kitchen pavilion framing featuring post-and-beam construction, tongue-and-groove cedar ceiling, and asphalt shingle roof.",
+      "legacyProjectId": null
+    },
+    "Contemporary Living & Deck Suite": {
+      "title": "Contemporary Living & Deck Suite",
+      "category": "building",
+      "coverImage": "53.jpeg",
+      "description": "Installation of modern grey composite deck boards utilizing hidden fastener clips and living room fireplace mantel accents.",
+      "legacyProjectId": null
+    },
+    "Open-Concept Living & Vinyl Flooring": {
+      "title": "Open-Concept Living & Vinyl Flooring",
+      "category": "renovations",
+      "coverImage": "16.jpeg",
+      "description": "Living area remodeling highlighting structural beam removal for open floor plan paired with high-traffic luxury vinyl plank flooring.",
+      "legacyProjectId": null
+    },
+    "Elevated Cedar Deck & Patio Stairs": {
+      "title": "Elevated Cedar Deck & Patio Stairs",
+      "category": "renovations",
+      "coverImage": "2.jpeg",
+      "description": "Complete demolition and rebuild of a damaged elevated deck featuring premium wood joists, composite boards, and glass railings.",
+      "legacyProjectId": null
+    },
+    "Executive Double-Sink Master Vanity": {
+      "title": "Executive Double-Sink Master Vanity",
+      "category": "renovations",
+      "coverImage": "22.jpeg",
+      "description": "Premium bathroom vanity install featuring under-mount double sink, dark wood accent mirror, and luxury vinyl flooring.",
+      "legacyProjectId": null
+    },
+    "Backlit Ledgestone Fireplace Suite": {
+      "title": "Backlit Ledgestone Fireplace Suite",
+      "category": "renovations",
+      "coverImage": "4.jpeg",
+      "description": "Floor-to-ceiling split stone fireplace wall transformation with floating mantel and custom built-in shelves with integrated warm LED lighting.",
+      "legacyProjectId": null
+    },
+    "Artisan Walnut & Hardwood Kitchen": {
+      "title": "Artisan Walnut & Hardwood Kitchen",
+      "category": "flooring",
+      "coverImage": "67.jpeg",
+      "description": "Custom dark walnut inlay border framing a fireplace hearth and luxury cork flooring showcase.",
+      "legacyProjectId": null
+    },
+    "Craftsman Kitchen & Window Millwork": {
+      "title": "Craftsman Kitchen & Window Millwork",
+      "category": "installer",
+      "coverImage": "30.jpeg",
+      "description": "Craftsman style window trim casing installation using premium pine boards, prepped and painted to perfection.",
+      "legacyProjectId": null
+    },
+    "Modern Oak & Quartz Kitchen": {
+      "title": "Modern Oak & Quartz Kitchen",
+      "category": "renovations",
+      "coverImage": "11.jpeg",
+      "description": "Full kitchen renovation featuring white shaker cabinetry, white quartz countertops, central white oak island, and chevron hardwood flooring.",
+      "legacyProjectId": null
+    },
+    "Minimalist Maple Kitchen & Flooring": {
+      "title": "Minimalist Maple Kitchen & Flooring",
+      "category": "flooring",
+      "coverImage": "19.jpeg",
+      "description": "Precision engineered maple flooring installed across living areas with matching threshold transition pieces.",
+      "legacyProjectId": null
+    },
+    "Madani Executive Basement Suite": {
+      "title": "Madani Executive Basement Suite",
+      "category": "renovations",
+      "coverImage": "36.jpeg",
+      "description": "Full basement makeover including luxury laundry space, built-in entertainment shelving, and marble tile shower screens.",
+      "legacyProjectId": null
+    },
+    "Modern Marble Freestanding Bath": {
+      "title": "Modern Marble Freestanding Bath",
+      "category": "renovations",
+      "coverImage": "57.jpeg",
+      "description": "High-end master bath upgrade featuring modern oval freestanding tub, floor-mounted chrome faucet, and floor-to-ceiling marble wall tile.",
+      "legacyProjectId": null
+    },
+    "Custom Timber Bunk Bedroom": {
+      "title": "Custom Timber Bunk Bedroom",
+      "category": "installer",
+      "coverImage": "31.jpeg",
+      "description": "Custom handcrafted timber bunk beds and built-in bedroom joinery optimized for residential space efficiency.",
+      "legacyProjectId": null
+    },
+    "Modern Glass Panel Staircase": {
+      "title": "Modern Glass Panel Staircase",
+      "category": "renovations",
+      "coverImage": "1.jpeg",
+      "description": "Custom staircase transformation replacing traditional wood spindles with modern tempered glass panels and matte black railings.",
+      "legacyProjectId": null
+    },
+    "Custom Utility & Laundry Suite": {
+      "title": "Custom Utility & Laundry Suite",
+      "category": "renovations",
+      "coverImage": "12.jpeg",
+      "description": "Space-saving laundry area renovation featuring stacked washer-dryer installation, custom door framing, and grey floor tiling.",
+      "legacyProjectId": null
+    },
+    "Exterior Cedar Staircase & Railings": {
+      "title": "Exterior Cedar Staircase & Railings",
+      "category": "building",
+      "coverImage": "7.jpeg",
+      "description": "Custom construction of exterior stair railings using premium weather-resistant cedar posts and heavy-duty metal safety handrails.",
+      "legacyProjectId": null
+    },
+    "Wide-Plank Oak Master Suite": {
+      "title": "Wide-Plank Oak Master Suite",
+      "category": "flooring",
+      "coverImage": "9.jpeg",
+      "description": "Precision installation of wide-plank light oak engineered hardwood flooring showing seamless wood grain finish across living spaces.",
+      "legacyProjectId": "project-hardwood-floor"
+    },
+    "Luxury Spa Guest Bathroom": {
+      "title": "Luxury Spa Guest Bathroom",
+      "category": "renovations",
+      "coverImage": "17.jpeg",
+      "description": "Renovation of a guest bathroom with durable wood-look vinyl plank flooring, sleek white vanity, and curved glass corner shower.",
+      "legacyProjectId": null
+    },
+    "Empirical Test Project Folder": {
+      "title": "Empirical Test Project Folder",
+      "category": "renovations",
+      "description": ""
+    },
+    "Gourmet Chef Kitchen": {
+      "title": "Gourmet Chef Kitchen",
+      "category": "renovations",
+      "description": ""
+    }
+  }
+}

@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visual Portfolio Curator | Ali Madani Contractor</title>
+  <meta name="description" content="Visual curator tool to manage project folders, images, categories, and cover images.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    :root {
+      --sidebar-width: 300px;
+    }
+
+    body {
+      padding-top: 100px;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .curator-container {
+      width: 95%;
+      max-width: 1400px;
+      margin: 0 auto 120px auto;
+      flex: 1;
+    }
+
+    /* Curator Toolbar */
+    .toolbar {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-bottom: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: var(--shadow-card);
+    }
+
+    .toolbar-left {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      align-items: center;
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .view-switcher {
+      display: flex;
+      background-color: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-pill);
+      padding: 4px;
+      gap: 4px;
+    }
+
+    .view-btn {
+      background: transparent;
+      border: none;
+      color: var(--color-text-muted);
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .view-btn.active {
+      background: var(--gradient-gold);
+      color: #0f0f0f;
+    }
+
+    .search-box {
+      position: relative;
+      flex: 1;
+      max-width: 400px;
+      min-width: 220px;
+    }
+
+    .search-input {
+      width: 100%;
+      background-color: var(--color-bg);
+      border: 1px solid var(--color-border);
+      color: var(--color-white);
+      padding: 10px 18px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--color-gold);
+      box-shadow: 0 0 10px rgba(201, 168, 76, 0.2);
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      background-color: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      padding: 8px 14px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      text-transform: capitalize;
+    }
+
+    .tab-btn:hover {
+      color: var(--color-white);
+      border-color: var(--color-gold);
+    }
+
+    .tab-btn.active {
+      background: var(--gradient-gold);
+      color: #0f0f0f;
+      border-color: transparent;
+    }
+
+    .toolbar-right {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .progress-info {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      font-weight: 500;
+    }
+
+    .progress-highlight {
+      color: var(--color-gold-light);
+      font-weight: 700;
+    }
+
+    /* Curator Projects Grid Layout */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+      gap: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Project Card */
+    .project-card {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      box-shadow: var(--shadow-card);
+      transition: var(--transition);
+    }
+
+    .project-card:hover {
+      border-color: rgba(201, 168, 76, 0.3);
+    }
+
+    .project-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 15px;
+    }
+
+    .project-title-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .folder-icon {
+      font-size: 1.4rem;
+    }
+
+    .project-rename-input {
+      flex: 1;
+      background-color: var(--color-bg);
+      border: 1px solid var(--color-border);
+      color: var(--color-white);
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .project-rename-input:focus {
+      outline: none;
+      border-color: var(--color-gold);
+    }
+
+    .btn-rename-save {
+      background: var(--gradient-gold);
+      color: #0f0f0f;
+      border: none;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn-rename-save:hover {
+      filter: brightness(1.1);
+      transform: translateY(-1px);
+    }
+
+    .image-count-badge {
+      background-color: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      white-space: nowrap;
+    }
+
+    .project-card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-row label {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    .curator-select,
+    .curator-input,
+    .curator-textarea {
+      background-color: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      color: var(--color-white);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .curator-select:focus,
+    .curator-input:focus,
+    .curator-textarea:focus {
+      outline: none;
+      border-color: var(--color-gold);
+      box-shadow: 0 0 5px rgba(201, 168, 76, 0.15);
+    }
+
+    .curator-textarea {
+      resize: vertical;
+      min-height: 60px;
+    }
+
+    /* Gallery Strip for Cover Selection */
+    .gallery-strip-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .gallery-strip {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding: 8px 4px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--color-border) transparent;
+    }
+
+    .strip-thumb {
+      position: relative;
+      width: 110px;
+      height: 110px;
+      flex-shrink: 0;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 2px solid var(--color-border);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .strip-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .strip-thumb.is-cover {
+      border-color: var(--color-gold);
+      box-shadow: 0 0 10px rgba(201, 168, 76, 0.4);
+    }
+
+    .cover-badge {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      background: var(--gradient-gold);
+      color: #0f0f0f;
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .set-cover-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .strip-thumb:hover .set-cover-overlay {
+      opacity: 1;
+    }
+
+    .btn-set-cover {
+      background: var(--color-gold);
+      color: #0f0f0f;
+      border: none;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* Single Images Grid View */
+    .images-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+      gap: 24px;
+    }
+
+    .curator-card {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      display: flex;
+      gap: 20px;
+      box-shadow: var(--shadow-card);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-left {
+      width: 150px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .thumb-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      cursor: pointer;
+    }
+
+    .thumb-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* Floating Save Bar */
+    .save-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(26, 26, 26, 0.95);
+      border-top: 1px solid var(--color-border);
+      padding: 18px 0;
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
+    }
+
+    .save-bar-content {
+      width: 90%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .save-status-text {
+      font-weight: 500;
+    }
+
+    .save-btn {
+      background: var(--gradient-gold);
+      color: #0f0f0f;
+      border: none;
+      padding: 12px 30px;
+      border-radius: var(--radius-pill);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(201,168,76,0.3);
+      transition: var(--transition);
+    }
+
+    .save-btn:disabled {
+      background: var(--color-surface-2);
+      color: var(--color-text-muted);
+      border: 1px solid var(--color-border);
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      top: 30px;
+      right: 30px;
+      background: var(--color-surface);
+      border-left: 4px solid var(--color-gold);
+      padding: 15px 25px;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-card);
+      transform: translateX(120%);
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      z-index: 3000;
+    }
+
+    .toast.active {
+      transform: translateX(0);
+    }
+
+    .toast-success { border-left-color: var(--color-success); }
+    .toast-error { border-left-color: var(--color-error); }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header scrolled">
+    <div class="container header-container">
+      <div class="logo">
+        <a href="index.html" aria-label="Ali Madani Contractor Home">
+          <span class="logo-bold">Ali Madani</span>
+          <span class="logo-light">Contractor</span>
+        </a>
+      </div>
+      <div style="color: var(--color-gold); font-weight: 600; font-size: 1.1rem; letter-spacing: 0.05em; text-transform: uppercase;">
+        Visual Portfolio Curator
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="curator-container" id="main-content">
+    <div class="toolbar">
+      <div class="toolbar-left">
+        <!-- View Switcher -->
+        <div class="view-switcher">
+          <button class="view-btn active" id="btn-view-projects">Projects View</button>
+          <button class="view-btn" id="btn-view-images">Images View</button>
+        </div>
+
+        <!-- Search bar -->
+        <div class="search-box">
+          <input type="text" id="curator-search" class="search-input" placeholder="Search by folder name, title, file..." aria-label="Search portfolio items">
+        </div>
+
+        <!-- Category Filters -->
+        <div class="filter-tabs">
+          <button class="tab-btn active" data-category="all">All</button>
+          <button class="tab-btn" data-category="renovations">renovations</button>
+          <button class="tab-btn" data-category="fencing">fencing</button>
+          <button class="tab-btn" data-category="building">building</button>
+          <button class="tab-btn" data-category="flooring">flooring</button>
+          <button class="tab-btn" data-category="installer">installer</button>
+        </div>
+      </div>
+      <div class="toolbar-right">
+        <div class="progress-info">
+          Projects: <span id="progress-projects" class="progress-highlight">0</span> | Images: <span id="progress-total">0</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Curator Grid Container -->
+    <div id="curator-grid" class="projects-grid">
+      <!-- Cards loaded dynamically -->
+    </div>
+  </main>
+
+  <!-- FLOATING SAVE BAR -->
+  <div class="save-bar">
+    <div class="save-bar-content">
+      <div class="save-status-text" id="save-status">
+        All project folder settings synchronized with server.
+      </div>
+      <button class="save-btn" id="save-btn" disabled>
+        <span>Save All Mappings</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toast-notif">
+    <div class="toast-message" id="toast-msg">Notification</div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    (function() {
+      'use strict';
+
+      // State Management
+      let projectsData = [];
+      let flatImagesData = [];
+      let currentView = 'projects'; // 'projects' or 'images'
+      let activeFilter = 'all';
+      let searchQuery = '';
+      let pendingChanges = false;
+
+      // DOM Elements
+      const gridContainer = document.getElementById('curator-grid');
+      const btnViewProjects = document.getElementById('btn-view-projects');
+      const btnViewImages = document.getElementById('btn-view-images');
+      const searchInput = document.getElementById('curator-search');
+      const filterBtns = document.querySelectorAll('.tab-btn');
+      const saveBtn = document.getElementById('save-btn');
+      const saveStatus = document.getElementById('save-status');
+      const progressProjects = document.getElementById('progress-projects');
+      const progressTotal = document.getElementById('progress-total');
+
+      const toast = document.getElementById('toast-notif');
+      const toastMsg = document.getElementById('toast-msg');
+
+      // Initial Fetch
+      async function loadCuratorData() {
+        try {
+          const resProjects = await fetch('/api/projects');
+          if (!resProjects.ok) throw new Error('Failed to fetch projects');
+          projectsData = await resProjects.json();
+
+          const resImages = await fetch('/api/portfolio');
+          if (resImages.ok) {
+            flatImagesData = await resImages.json();
+          }
+
+          updateProgressCounts();
+          renderView();
+        } catch (err) {
+          showToast(err.message, 'error');
+        }
+      }
+
+      function updateProgressCounts() {
+        progressProjects.textContent = projectsData.length;
+        const totalImgs = projectsData.reduce((acc, p) => acc + (p.images ? p.images.length : 0), 0);
+        progressTotal.textContent = totalImgs;
+      }
+
+      function renderView() {
+        if (currentView === 'projects') {
+          gridContainer.className = 'projects-grid';
+          renderProjectsView();
+        } else {
+          gridContainer.className = 'images-grid';
+          renderImagesView();
+        }
+      }
+
+      // 1. Projects View Renderer
+      function renderProjectsView() {
+        const filtered = projectsData.filter(proj => {
+          const matchesCategory = activeFilter === 'all' || proj.category === activeFilter;
+          const q = searchQuery.toLowerCase();
+          const matchesSearch = proj.folderName.toLowerCase().includes(q) ||
+                                proj.title.toLowerCase().includes(q) ||
+                                proj.description.toLowerCase().includes(q);
+          return matchesCategory && matchesSearch;
+        });
+
+        if (filtered.length === 0) {
+          gridContainer.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 50px 0; color: var(--color-text-muted);">No projects found matching current filters.</div>`;
+          return;
+        }
+
+        gridContainer.innerHTML = filtered.map(proj => {
+          const imagesList = proj.images || [];
+          return `
+            <div class="project-card" data-folder="${escapeHtml(proj.folderName)}">
+              <div class="project-card-header">
+                <div class="project-title-group">
+                  <span class="folder-icon">📁</span>
+                  <input type="text" class="project-rename-input" id="rename-input-${escapeHtml(proj.folderName)}" value="${escapeHtml(proj.folderName)}" aria-label="Project folder name">
+                  <button type="button" class="btn-rename-save" onclick="window.curatorRenameFolder('${escapeHtml(proj.folderName)}')">Rename</button>
+                </div>
+                <span class="image-count-badge">${imagesList.length} files</span>
+              </div>
+
+              <div class="project-card-body">
+                <div class="form-row">
+                  <label>Category</label>
+                  <select class="curator-select" onchange="window.curatorUpdateProjectCategory('${escapeHtml(proj.folderName)}', this.value)">
+                    <option value="renovations" ${proj.category === 'renovations' ? 'selected' : ''}>Renovations</option>
+                    <option value="fencing" ${proj.category === 'fencing' ? 'selected' : ''}>Fencing</option>
+                    <option value="building" ${proj.category === 'building' ? 'selected' : ''}>Building</option>
+                    <option value="flooring" ${proj.category === 'flooring' ? 'selected' : ''}>Flooring</option>
+                    <option value="installer" ${proj.category === 'installer' ? 'selected' : ''}>Installer</option>
+                  </select>
+                </div>
+
+                <div class="form-row">
+                  <label>Description</label>
+                  <textarea class="curator-textarea" onchange="window.curatorUpdateProjectDesc('${escapeHtml(proj.folderName)}', this.value)">${escapeHtml(proj.description)}</textarea>
+                </div>
+
+                <div class="gallery-strip-wrapper">
+                  <label>Project Images & Cover Selection (Click thumbnail to set as Cover Image)</label>
+                  <div class="gallery-strip">
+                    ${imagesList.map(img => {
+                      const isCover = (img.file === proj.coverImage || img.filename.endsWith(proj.coverImage));
+                      const imgSrc = `img/${img.filename.replace(/ /g, '%20')}`;
+                      return `
+                        <div class="strip-thumb ${isCover ? 'is-cover' : ''}" title="${img.file}">
+                          <img src="${imgSrc}" alt="${img.file}">
+                          ${isCover ? '<span class="cover-badge">★ COVER</span>' : ''}
+                          <div class="set-cover-overlay">
+                            <button type="button" class="btn-set-cover" onclick="window.curatorSetCover('${escapeHtml(proj.folderName)}', '${escapeHtml(img.file)}')">${isCover ? 'Cover' : 'Set Cover'}</button>
+                          </div>
+                        </div>
+                      `;
+                    }).join('')}
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // 2. Images View Renderer
+      function renderImagesView() {
+        const filtered = flatImagesData.filter(img => {
+          const matchesCategory = activeFilter === 'all' || img.category === activeFilter;
+          const q = searchQuery.toLowerCase();
+          const matchesSearch = img.filename.toLowerCase().includes(q) ||
+                                img.title.toLowerCase().includes(q) ||
+                                img.description.toLowerCase().includes(q);
+          return matchesCategory && matchesSearch;
+        });
+
+        if (filtered.length === 0) {
+          gridContainer.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 50px 0; color: var(--color-text-muted);">No images found matching filters.</div>`;
+          return;
+        }
+
+        gridContainer.innerHTML = filtered.map(img => {
+          const imgSrc = `img/${img.filename.replace(/ /g, '%20')}`;
+          return `
+            <div class="curator-card" data-id="${img.id}">
+              <div class="card-left">
+                <div class="thumb-wrapper">
+                  <img src="${imgSrc}" alt="${escapeHtml(img.alt)}" class="thumb-img">
+                </div>
+                <div style="font-size: 0.75rem; color: var(--color-text-muted); text-align: center;">${escapeHtml(img.filename)}</div>
+              </div>
+              <div class="card-right">
+                <div class="form-row">
+                  <label>Category</label>
+                  <select class="curator-select" onchange="window.curatorUpdateImageField(${img.id}, 'category', this.value)">
+                    <option value="renovations" ${img.category === 'renovations' ? 'selected' : ''}>Renovations</option>
+                    <option value="fencing" ${img.category === 'fencing' ? 'selected' : ''}>Fencing</option>
+                    <option value="building" ${img.category === 'building' ? 'selected' : ''}>Building</option>
+                    <option value="flooring" ${img.category === 'flooring' ? 'selected' : ''}>Flooring</option>
+                    <option value="installer" ${img.category === 'installer' ? 'selected' : ''}>Installer</option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <label>Title</label>
+                  <input type="text" class="curator-input" value="${escapeHtml(img.title)}" oninput="window.curatorUpdateImageField(${img.id}, 'title', this.value)">
+                </div>
+                <div class="form-row">
+                  <label>Description</label>
+                  <textarea class="curator-textarea" oninput="window.curatorUpdateImageField(${img.id}, 'description', this.value)">${escapeHtml(img.description)}</textarea>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      function escapeHtml(str) {
+        if (!str) return '';
+        return String(str)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      }
+
+      // --- Actions ---
+
+      // 1. Rename Project Folder (POST /api/projects/rename)
+      window.curatorRenameFolder = async function(oldName) {
+        const inputEl = document.getElementById(`rename-input-${oldName}`);
+        if (!inputEl) return;
+        const newName = inputEl.value.trim();
+
+        if (!newName) {
+          showToast('Folder name cannot be empty.', 'error');
+          return;
+        }
+
+        if (oldName === newName) {
+          showToast('Folder name is unchanged.', 'success');
+          return;
+        }
+
+        try {
+          const res = await fetch('/api/projects/rename', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ oldName, newName })
+          });
+
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error(data.message || 'Failed to rename folder on disk.');
+          }
+
+          showToast(`✓ Folder successfully renamed to "${newName}" on disk!`, 'success');
+
+          // Reload data dynamically from backend without full page reload
+          await loadCuratorData();
+        } catch (err) {
+          showToast(err.message, 'error');
+        }
+      };
+
+      // 2. Set Cover Image (POST /api/projects/cover)
+      window.curatorSetCover = async function(folderName, coverImage) {
+        try {
+          const res = await fetch('/api/projects/cover', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ folderName, coverImage })
+          });
+
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error(data.message || 'Failed to set cover image.');
+          }
+
+          showToast(`✓ Cover image updated for "${folderName}"!`, 'success');
+
+          // Update local state
+          const proj = projectsData.find(p => p.folderName === folderName);
+          if (proj) {
+            proj.coverImage = coverImage;
+          }
+          renderView();
+        } catch (err) {
+          showToast(err.message, 'error');
+        }
+      };
+
+      // 3. Update Category / Description
+      window.curatorUpdateProjectCategory = async function(folderName, category) {
+        const proj = projectsData.find(p => p.folderName === folderName);
+        if (proj) {
+          proj.category = category;
+          await markPendingChanges();
+        }
+      };
+
+      window.curatorUpdateProjectDesc = async function(folderName, description) {
+        const proj = projectsData.find(p => p.folderName === folderName);
+        if (proj) {
+          proj.description = description;
+          await markPendingChanges();
+        }
+      };
+
+      window.curatorUpdateImageField = function(id, field, value) {
+        const img = flatImagesData.find(i => i.id === id);
+        if (img) {
+          img[field] = value;
+          markPendingChanges();
+        }
+      };
+
+      async function markPendingChanges() {
+        pendingChanges = true;
+        saveBtn.disabled = false;
+        saveStatus.textContent = 'Pending modifications waiting to be saved.';
+        saveStatus.style.color = 'var(--color-gold-light)';
+      }
+
+      // Save Mappings POST
+      saveBtn.addEventListener('click', async () => {
+        saveBtn.disabled = true;
+        saveStatus.textContent = 'Saving modifications to server...';
+
+        try {
+          // Sync projects config
+          const configProjects = {};
+          for (const p of projectsData) {
+            configProjects[p.folderName] = {
+              title: p.title || p.folderName,
+              category: p.category,
+              coverImage: p.coverImage,
+              description: p.description
+            };
+          }
+
+          const res = await fetch('/api/portfolio', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ projects: configProjects })
+          });
+
+          if (!res.ok) throw new Error('Error saving portfolio updates.');
+
+          pendingChanges = false;
+          saveStatus.textContent = 'All project settings saved successfully!';
+          saveStatus.style.color = 'var(--color-text-muted)';
+          showToast('✓ All changes saved successfully!', 'success');
+          await loadCuratorData();
+        } catch (err) {
+          showToast(err.message, 'error');
+          saveBtn.disabled = false;
+        }
+      });
+
+      // View Switcher listeners
+      btnViewProjects.addEventListener('click', () => {
+        btnViewProjects.classList.add('active');
+        btnViewImages.classList.remove('active');
+        currentView = 'projects';
+        renderView();
+      });
+
+      btnViewImages.addEventListener('click', () => {
+        btnViewImages.classList.add('active');
+        btnViewProjects.classList.remove('active');
+        currentView = 'images';
+        renderView();
+      });
+
+      // Filter & Search listeners
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value;
+        renderView();
+      });
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeFilter = btn.dataset.category;
+          renderView();
+        });
+      });
+
+      // Toast Notifications
+      let toastTimeout;
+      function showToast(message, type = 'success') {
+        clearTimeout(toastTimeout);
+        toastMsg.textContent = message;
+        toast.className = `toast active toast-${type}`;
+        toastTimeout = setTimeout(() => {
+          toast.className = 'toast';
+        }, 4000);
+      }
+
+      // Load data on page init
+      loadCuratorData();
+    })();
+  </script>
+</body>
+</html>

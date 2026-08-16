@@ -1,0 +1,17 @@
+{
+  "name": "ali-madani-contractor",
+  "version": "1.0.0",
+  "description": "Website for Ali Madani Contractor",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test --test-concurrency=1 tests/*.test.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^22.12.1",
+    "supertest": "^7.0.0"
+  }
+}
