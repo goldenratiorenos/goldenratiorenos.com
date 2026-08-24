@@ -594,6 +594,11 @@
         recipient:      'narminbm@gmail.com',
       };
 
+      const formSubject = document.getElementById('form-subject');
+      if (formSubject) {
+        formSubject.value = `New Project Inquiry: ${payload.name} (${payload.phone})`;
+      }
+
       const isLocalHost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
 
       try {

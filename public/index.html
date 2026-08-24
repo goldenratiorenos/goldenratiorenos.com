@@ -263,9 +263,7 @@
             <!-- Lead Generation Form -->
             <form id="contact-form" action="/api/contact" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
               <input type="hidden" name="form-name" value="contact">
-              <input type="hidden" name="_to" value="narminbm@gmail.com">
-              <input type="hidden" name="recipient" value="narminbm@gmail.com">
-              <input type="hidden" name="_subject" value="New Quote Request - Golden Ratio Renos">
+              <input type="hidden" name="subject" id="form-subject" value="New Project Quote Request - Golden Ratio Renos">
               <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
               <p class="form-instructions">All fields are required to help us prepare your consultation details.</p>
 
@@ -340,7 +338,6 @@
                   <input
                     type="text"
                     id="captcha-answer"
-                    name="captchaAnswer"
                     required
                     autocomplete="off"
                     placeholder="Enter answer"
