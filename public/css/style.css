@@ -341,7 +341,7 @@ p { color: var(--color-text-muted); }
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: var(--color-bg) url('../img/hero_bg.png') center center / cover no-repeat;
+  background-color: var(--color-bg);
   overflow: hidden;
 }
 
@@ -353,8 +353,10 @@ p { color: var(--color-text-muted); }
   min-height: 100%;
   width: auto;
   height: auto;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1.2);
+  transform-origin: top left;
   object-fit: cover;
+  object-position: top left;
   z-index: 0;
   pointer-events: none;
   opacity: 0.85;
