@@ -317,8 +317,97 @@
     }
   });
 
+  // AccordionGallery Featured Interactive Showcase
+  let accordionInstance = null;
+  function initFeaturedAccordion() {
+    const root = document.getElementById('accordion-gallery-root');
+    if (!root || typeof AccordionGallery !== 'function') return;
+
+    const portfolioList = (typeof PORTFOLIO_IMAGES !== 'undefined' && Array.isArray(PORTFOLIO_IMAGES))
+      ? PORTFOLIO_IMAGES
+      : [];
+
+    if (!portfolioList.length) return;
+
+    const featuredTitles = [
+      "Modern Oak & Quartz Kitchen",
+      "Backlit Ledgestone Fireplace Suite",
+      "Elevated Cedar Deck & Patio Stairs",
+      "Modern Marble Freestanding Bath",
+      "Madani Estate Backyard Pavilion",
+      "Wide-Plank Oak Master Suite"
+    ];
+
+    let featuredItems = [];
+    featuredTitles.forEach(title => {
+      const match = portfolioList.find(p => p.title === title || p.id === title || p.folderName === title);
+      if (match) {
+        const coverImgObj = (match.images && match.images.length > 0)
+          ? (match.images.find(img => img.file === match.coverImage) || match.images[0])
+          : null;
+        const imgSrc = coverImgObj
+          ? `img/${coverImgObj.filename.replace(/ /g, '%20')}`
+          : (match.filename ? `img/${match.filename.replace(/ /g, '%20')}` : 'img/portfolio_kitchen.png');
+
+        featuredItems.push({
+          image: imgSrc,
+          label: match.title,
+          alt: match.title,
+          id: match.id,
+          projectId: match.projectId || match.id
+        });
+      }
+    });
+
+    if (featuredItems.length < 3) {
+      featuredItems = portfolioList.slice(0, 5).map(match => {
+        const coverImgObj = (match.images && match.images.length > 0)
+          ? (match.images.find(img => img.file === match.coverImage) || match.images[0])
+          : null;
+        const imgSrc = coverImgObj
+          ? `img/${coverImgObj.filename.replace(/ /g, '%20')}`
+          : (match.filename ? `img/${match.filename.replace(/ /g, '%20')}` : 'img/portfolio_kitchen.png');
+
+        return {
+          image: imgSrc,
+          label: match.title,
+          alt: match.title,
+          id: match.id,
+          projectId: match.projectId || match.id
+        };
+      });
+    }
+
+    if (accordionInstance && typeof accordionInstance.destroy === 'function') {
+      accordionInstance.destroy();
+    }
+
+    accordionInstance = AccordionGallery(root, {
+      items: featuredItems,
+      defaultIndex: 2,
+      accentColor: '#D97706',
+      overlayColor: '#0C0A09',
+      textColor: '#FAFAF9',
+      height: 480,
+      gap: 12,
+      radius: 16,
+      expandRatio: 0.52,
+      trigger: 'hover',
+      duration: 0.6,
+      ease: 'power3.out',
+      parallax: 0.5,
+      tilt: 8,
+      showLabels: true,
+      grayscale: true,
+      onPanelClick: (item) => {
+        openLightbox(item.id, item.projectId);
+      }
+    });
+  }
+
   // Synchronous initial render using window.PORTFOLIO_IMAGES
   renderPortfolio(true);
+  initFeaturedAccordion();
 
   // Asynchronous update from backend API if available
   fetch('/api/projects')
@@ -327,6 +416,7 @@
       if (Array.isArray(data) && data.length > 0) {
         window.PORTFOLIO_IMAGES = data;
         renderPortfolio(false);
+        initFeaturedAccordion();
       }
     })
     .catch(err => console.log('API refresh fallback:', err.message));

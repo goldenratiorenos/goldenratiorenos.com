@@ -10,23 +10,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/AccordionGallery.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="js/portfolio-data.js?v=2"></script>
+  <script defer src="js/AccordionGallery.js"></script>
   <script defer src="js/main.js?v=2"></script>
   <script>
-    // Preload the first 8 portfolio images eagerly to avoid race conditions during test verification
-    [
-      "1.jpeg",
-      "27.jpeg",
-      "2.jpeg",
-      "9.jpeg",
-      "6.jpeg",
-      "3.jpeg",
-      "4.jpeg",
-      "7.jpeg"
-    ].forEach(src => {
-      const img = new Image();
-      img.src = 'img/' + src;
-    });
+    // Preload the first 8 portfolio cover images eagerly to avoid race conditions during test verification
+    if (typeof PORTFOLIO_IMAGES !== 'undefined' && Array.isArray(PORTFOLIO_IMAGES)) {
+      PORTFOLIO_IMAGES.slice(0, 8).forEach(p => {
+        const cover = (p.images && p.images.length > 0)
+          ? (p.images.find(img => img.file === p.coverImage) || p.images[0])
+          : null;
+        const src = cover ? 'img/' + cover.filename : (p.filename ? 'img/' + p.filename : null);
+        if (src) {
+          const img = new Image();
+          img.src = src;
+        }
+      });
+    }
   </script>
 </head>
 <body>
@@ -173,6 +175,9 @@
           <p class="section-description">Browse through some of our premium contract work. Each project represents our dedication to structural integrity and aesthetic perfection.</p>
         </div>
 
+        <!-- Featured 3D Interactive Accordion Showcase (React Bits AccordionGallery) -->
+        <div id="accordion-gallery-root" class="accordion-gallery-wrapper reveal" aria-label="Featured interactive project showcase"></div>
+
         <!-- Portfolio Filter Controls -->
         <div class="portfolio-filters reveal" role="tablist" aria-label="Filter portfolio projects">
           <button class="filter-btn active" role="tab" aria-selected="true" aria-controls="portfolio-grid" data-filter="all" id="filter-all">All Projects</button>
@@ -275,7 +280,7 @@
 
           <div class="contact-form-container reveal reveal-delay-2">
             <!-- Lead Generation Form -->
-            <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+            <form id="contact-form" action="/api/contact" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
               <input type="hidden" name="form-name" value="contact">
               <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
               <p class="form-instructions">All fields are required to help us prepare your consultation details.</p>

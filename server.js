@@ -184,9 +184,25 @@ app.get('/api/portfolio', (req, res) => {
       const projects = getDynamicProjects();
       return res.json(projects);
     }
-    delete require.cache[require.resolve(DATA_PATH)];
-    const portfolioImages = require(DATA_PATH);
-    res.json(portfolioImages);
+    const projects = getDynamicProjects();
+    const flatImages = [];
+    let idCounter = 1;
+    for (const p of projects) {
+      if (p.images && p.images.length > 0) {
+        for (const img of p.images) {
+          flatImages.push({
+            id: idCounter++,
+            filename: img.filename,
+            category: img.category || p.category,
+            title: img.title || p.title,
+            alt: img.alt || p.title,
+            description: img.description || p.description,
+            projectId: p.projectId || p.id
+          });
+        }
+      }
+    }
+    res.json(flatImages);
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }

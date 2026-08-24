@@ -1,1 +1,835 @@
-const PORTFOLIO_IMAGES = [{"id":"Artisan Walnut & Hardwood Kitchen","projectId":"Artisan Walnut & Hardwood Kitchen","folderName":"Artisan Walnut & Hardwood Kitchen","title":"Artisan Walnut & Hardwood Kitchen","category":"flooring","coverImage":"67.jpeg","description":"Custom dark walnut inlay border framing a fireplace hearth and luxury cork flooring showcase.","images":[{"filename":"Artisan Walnut & Hardwood Kitchen/63.jpeg","file":"63.jpeg","folderName":"Artisan Walnut & Hardwood Kitchen","category":"flooring","title":"Artisan Walnut & Hardwood Kitchen","alt":"Artisan Walnut & Hardwood Kitchen - 63.jpeg","description":"Custom dark walnut inlay border framing a fireplace hearth and luxury cork flooring showcase.","projectId":"Artisan Walnut & Hardwood Kitchen"},{"filename":"Artisan Walnut & Hardwood Kitchen/64.jpeg","file":"64.jpeg","folderName":"Artisan Walnut & Hardwood Kitchen","category":"flooring","title":"Artisan Walnut & Hardwood Kitchen","alt":"Artisan Walnut & Hardwood Kitchen - 64.jpeg","description":"Custom dark walnut inlay border framing a fireplace hearth and luxury cork flooring showcase.","projectId":"Artisan Walnut & Hardwood Kitchen"},{"filename":"Artisan Walnut & Hardwood Kitchen/67.jpeg","file":"67.jpeg","folderName":"Artisan Walnut & Hardwood Kitchen","category":"flooring","title":"Artisan Walnut & Hardwood Kitchen","alt":"Artisan Walnut & Hardwood Kitchen - 67.jpeg","description":"Custom dark walnut inlay border framing a fireplace hearth and luxury cork flooring showcase.","projectId":"Artisan Walnut & Hardwood Kitchen"}]},{"id":"Backlit Ledgestone Fireplace Suite","projectId":"Backlit Ledgestone Fireplace Suite","folderName":"Backlit Ledgestone Fireplace Suite","title":"Backlit Ledgestone Fireplace Suite","category":"renovations","coverImage":"4.jpeg","description":"Floor-to-ceiling split stone fireplace wall transformation with floating mantel and custom built-in shelves with integrated warm LED lighting.","images":[{"filename":"Backlit Ledgestone Fireplace Suite/24.jpeg","file":"24.jpeg","folderName":"Backlit Ledgestone Fireplace Suite","category":"renovations","title":"Backlit Ledgestone Fireplace Suite","alt":"Backlit Ledgestone Fireplace Suite - 24.jpeg","description":"Floor-to-ceiling split stone fireplace wall transformation with floating mantel and custom built-in shelves with integrated warm LED lighting.","projectId":"Backlit Ledgestone Fireplace Suite"},{"filename":"Backlit Ledgestone Fireplace Suite/25.jpeg","file":"25.jpeg","folderName":"Backlit Ledgestone Fireplace Suite","category":"renovations","title":"Backlit Ledgestone Fireplace Suite","alt":"Backlit Ledgestone Fireplace Suite - 25.jpeg","description":"Floor-to-ceiling split stone fireplace wall transformation with floating mantel and custom built-in shelves with integrated warm LED lighting.","projectId":"Backlit Ledgestone Fireplace Suite"},{"filename":"Backlit Ledgestone Fireplace Suite/26.jpeg","file":"26.jpeg","folderName":"Backlit Ledgestone Fireplace Suite","category":"renovations","title":"Backlit Ledgestone Fireplace Suite","alt":"Backlit Ledgestone Fireplace Suite - 26.jpeg","description":"Floor-to-ceiling split stone fireplace wall transformation with floating mantel and custom built-in shelves with integrated warm LED lighting.","projectId":"Backlit Ledgestone Fireplace Suite"},{"filename":"Backlit Ledgestone Fireplace Suite/28.jpeg","file":"28.jpeg","folderName":"Backlit Ledgestone Fireplace Suite","category":"renovations","title":"Backlit Ledgestone Fireplace Suite","alt":"Backlit Ledgestone Fireplace Suite - 28.jpeg","description":"Floor-to-ceiling split stone fireplace wall transformation with floating mantel and custom built-in shelves with integrated warm LED lighting.","projectId":"Backlit Ledgestone Fireplace Suite"},{"filename":"Backlit Ledgestone Fireplace Suite/32.jpeg","file":"32.jpeg","folderName":"Backlit Ledgestone Fireplace Suite","category":"renovations","title":"Backlit Ledgestone Fireplace Suite","alt":"Backlit Ledgestone Fireplace Suite - 32.jpeg","description":"Floor-to-ceiling split stone fireplace wall transformation with floating mantel and custom built-in shelves with integrated warm LED lighting.","projectId":"Backlit Ledgestone Fireplace Suite"},{"filename":"Backlit Ledgestone Fireplace Suite/4.jpeg","file":"4.jpeg","folderName":"Backlit Ledgestone Fireplace Suite","category":"renovations","title":"Backlit Ledgestone Fireplace Suite","alt":"Backlit Ledgestone Fireplace Suite - 4.jpeg","description":"Floor-to-ceiling split stone fireplace wall transformation with floating mantel and custom built-in shelves with integrated warm LED lighting.","projectId":"Backlit Ledgestone Fireplace Suite"}]},{"id":"Contemporary Living & Deck Suite","projectId":"Contemporary Living & Deck Suite","folderName":"Contemporary Living & Deck Suite","title":"Contemporary Living & Deck Suite","category":"building","coverImage":"53.jpeg","description":"Installation of modern grey composite deck boards utilizing hidden fastener clips and living room fireplace mantel accents.","images":[{"filename":"Contemporary Living & Deck Suite/53.jpeg","file":"53.jpeg","folderName":"Contemporary Living & Deck Suite","category":"building","title":"Contemporary Living & Deck Suite","alt":"Contemporary Living & Deck Suite - 53.jpeg","description":"Installation of modern grey composite deck boards utilizing hidden fastener clips and living room fireplace mantel accents.","projectId":"Contemporary Living & Deck Suite"},{"filename":"Contemporary Living & Deck Suite/61.jpeg","file":"61.jpeg","folderName":"Contemporary Living & Deck Suite","category":"building","title":"Contemporary Living & Deck Suite","alt":"Contemporary Living & Deck Suite - 61.jpeg","description":"Installation of modern grey composite deck boards utilizing hidden fastener clips and living room fireplace mantel accents.","projectId":"Contemporary Living & Deck Suite"}]},{"id":"Craftsman Kitchen & Window Millwork","projectId":"Craftsman Kitchen & Window Millwork","folderName":"Craftsman Kitchen & Window Millwork","title":"Craftsman Kitchen & Window Millwork","category":"installer","coverImage":"30.jpeg","description":"Craftsman style window trim casing installation using premium pine boards, prepped and painted to perfection.","images":[{"filename":"Craftsman Kitchen & Window Millwork/30.jpeg","file":"30.jpeg","folderName":"Craftsman Kitchen & Window Millwork","category":"installer","title":"Craftsman Kitchen & Window Millwork","alt":"Craftsman Kitchen & Window Millwork - 30.jpeg","description":"Craftsman style window trim casing installation using premium pine boards, prepped and painted to perfection.","projectId":"Craftsman Kitchen & Window Millwork"}]},{"id":"Custom Timber Bunk Bedroom","projectId":"Custom Timber Bunk Bedroom","folderName":"Custom Timber Bunk Bedroom","title":"Custom Timber Bunk Bedroom","category":"installer","coverImage":"31.jpeg","description":"Custom handcrafted timber bunk beds and built-in bedroom joinery optimized for residential space efficiency.","images":[{"filename":"Custom Timber Bunk Bedroom/31.jpeg","file":"31.jpeg","folderName":"Custom Timber Bunk Bedroom","category":"installer","title":"Custom Timber Bunk Bedroom","alt":"Custom Timber Bunk Bedroom - 31.jpeg","description":"Custom handcrafted timber bunk beds and built-in bedroom joinery optimized for residential space efficiency.","projectId":"Custom Timber Bunk Bedroom"}]},{"id":"Custom Utility & Laundry Suite","projectId":"Custom Utility & Laundry Suite","folderName":"Custom Utility & Laundry Suite","title":"Custom Utility & Laundry Suite","category":"renovations","coverImage":"12.jpeg","description":"Space-saving laundry area renovation featuring stacked washer-dryer installation, custom door framing, and grey floor tiling.","images":[{"filename":"Custom Utility & Laundry Suite/12.jpeg","file":"12.jpeg","folderName":"Custom Utility & Laundry Suite","category":"renovations","title":"Custom Utility & Laundry Suite","alt":"Custom Utility & Laundry Suite - 12.jpeg","description":"Space-saving laundry area renovation featuring stacked washer-dryer installation, custom door framing, and grey floor tiling.","projectId":"Custom Utility & Laundry Suite"}]},{"id":"Elevated Cedar Deck & Patio Stairs","projectId":"Elevated Cedar Deck & Patio Stairs","folderName":"Elevated Cedar Deck & Patio Stairs","title":"Elevated Cedar Deck & Patio Stairs","category":"renovations","coverImage":"2.jpeg","description":"Complete demolition and rebuild of a damaged elevated deck featuring premium wood joists, composite boards, and glass railings.","images":[{"filename":"Elevated Cedar Deck & Patio Stairs/2.jpeg","file":"2.jpeg","folderName":"Elevated Cedar Deck & Patio Stairs","category":"renovations","title":"Elevated Cedar Deck & Patio Stairs","alt":"Elevated Cedar Deck & Patio Stairs - 2.jpeg","description":"Complete demolition and rebuild of a damaged elevated deck featuring premium wood joists, composite boards, and glass railings.","projectId":"Elevated Cedar Deck & Patio Stairs"},{"filename":"Elevated Cedar Deck & Patio Stairs/44.jpeg","file":"44.jpeg","folderName":"Elevated Cedar Deck & Patio Stairs","category":"renovations","title":"Elevated Cedar Deck & Patio Stairs","alt":"Elevated Cedar Deck & Patio Stairs - 44.jpeg","description":"Complete demolition and rebuild of a damaged elevated deck featuring premium wood joists, composite boards, and glass railings.","projectId":"Elevated Cedar Deck & Patio Stairs"},{"filename":"Elevated Cedar Deck & Patio Stairs/46.jpeg","file":"46.jpeg","folderName":"Elevated Cedar Deck & Patio Stairs","category":"renovations","title":"Elevated Cedar Deck & Patio Stairs","alt":"Elevated Cedar Deck & Patio Stairs - 46.jpeg","description":"Complete demolition and rebuild of a damaged elevated deck featuring premium wood joists, composite boards, and glass railings.","projectId":"Elevated Cedar Deck & Patio Stairs"},{"filename":"Elevated Cedar Deck & Patio Stairs/47.jpeg","file":"47.jpeg","folderName":"Elevated Cedar Deck & Patio Stairs","category":"renovations","title":"Elevated Cedar Deck & Patio Stairs","alt":"Elevated Cedar Deck & Patio Stairs - 47.jpeg","description":"Complete demolition and rebuild of a damaged elevated deck featuring premium wood joists, composite boards, and glass railings.","projectId":"Elevated Cedar Deck & Patio Stairs"},{"filename":"Elevated Cedar Deck & Patio Stairs/48.jpeg","file":"48.jpeg","folderName":"Elevated Cedar Deck & Patio Stairs","category":"renovations","title":"Elevated Cedar Deck & Patio Stairs","alt":"Elevated Cedar Deck & Patio Stairs - 48.jpeg","description":"Complete demolition and rebuild of a damaged elevated deck featuring premium wood joists, composite boards, and glass railings.","projectId":"Elevated Cedar Deck & Patio Stairs"},{"filename":"Elevated Cedar Deck & Patio Stairs/49.jpeg","file":"49.jpeg","folderName":"Elevated Cedar Deck & Patio Stairs","category":"renovations","title":"Elevated Cedar Deck & Patio Stairs","alt":"Elevated Cedar Deck & Patio Stairs - 49.jpeg","description":"Complete demolition and rebuild of a damaged elevated deck featuring premium wood joists, composite boards, and glass railings.","projectId":"Elevated Cedar Deck & Patio Stairs"},{"filename":"Elevated Cedar Deck & Patio Stairs/50.jpeg","file":"50.jpeg","folderName":"Elevated Cedar Deck & Patio Stairs","category":"renovations","title":"Elevated Cedar Deck & Patio Stairs","alt":"Elevated Cedar Deck & Patio Stairs - 50.jpeg","description":"Complete demolition and rebuild of a damaged elevated deck featuring premium wood joists, composite boards, and glass railings.","projectId":"Elevated Cedar Deck & Patio Stairs"},{"filename":"Elevated Cedar Deck & Patio Stairs/51.jpeg","file":"51.jpeg","folderName":"Elevated Cedar Deck & Patio Stairs","category":"renovations","title":"Elevated Cedar Deck & Patio Stairs","alt":"Elevated Cedar Deck & Patio Stairs - 51.jpeg","description":"Complete demolition and rebuild of a damaged elevated deck featuring premium wood joists, composite boards, and glass railings.","projectId":"Elevated Cedar Deck & Patio Stairs"},{"filename":"Elevated Cedar Deck & Patio Stairs/52.jpeg","file":"52.jpeg","folderName":"Elevated Cedar Deck & Patio Stairs","category":"renovations","title":"Elevated Cedar Deck & Patio Stairs","alt":"Elevated Cedar Deck & Patio Stairs - 52.jpeg","description":"Complete demolition and rebuild of a damaged elevated deck featuring premium wood joists, composite boards, and glass railings.","projectId":"Elevated Cedar Deck & Patio Stairs"},{"filename":"Elevated Cedar Deck & Patio Stairs/54.jpeg","file":"54.jpeg","folderName":"Elevated Cedar Deck & Patio Stairs","category":"renovations","title":"Elevated Cedar Deck & Patio Stairs","alt":"Elevated Cedar Deck & Patio Stairs - 54.jpeg","description":"Complete demolition and rebuild of a damaged elevated deck featuring premium wood joists, composite boards, and glass railings.","projectId":"Elevated Cedar Deck & Patio Stairs"},{"filename":"Elevated Cedar Deck & Patio Stairs/55.jpeg","file":"55.jpeg","folderName":"Elevated Cedar Deck & Patio Stairs","category":"renovations","title":"Elevated Cedar Deck & Patio Stairs","alt":"Elevated Cedar Deck & Patio Stairs - 55.jpeg","description":"Complete demolition and rebuild of a damaged elevated deck featuring premium wood joists, composite boards, and glass railings.","projectId":"Elevated Cedar Deck & Patio Stairs"},{"filename":"Elevated Cedar Deck & Patio Stairs/62.jpeg","file":"62.jpeg","folderName":"Elevated Cedar Deck & Patio Stairs","category":"renovations","title":"Elevated Cedar Deck & Patio Stairs","alt":"Elevated Cedar Deck & Patio Stairs - 62.jpeg","description":"Complete demolition and rebuild of a damaged elevated deck featuring premium wood joists, composite boards, and glass railings.","projectId":"Elevated Cedar Deck & Patio Stairs"}]},{"id":"Executive Double-Sink Master Vanity","projectId":"Executive Double-Sink Master Vanity","folderName":"Executive Double-Sink Master Vanity","title":"Executive Double-Sink Master Vanity","category":"renovations","coverImage":"22.jpeg","description":"Premium bathroom vanity install featuring under-mount double sink, dark wood accent mirror, and luxury vinyl flooring.","images":[{"filename":"Executive Double-Sink Master Vanity/15.jpeg","file":"15.jpeg","folderName":"Executive Double-Sink Master Vanity","category":"renovations","title":"Executive Double-Sink Master Vanity","alt":"Executive Double-Sink Master Vanity - 15.jpeg","description":"Premium bathroom vanity install featuring under-mount double sink, dark wood accent mirror, and luxury vinyl flooring.","projectId":"Executive Double-Sink Master Vanity"},{"filename":"Executive Double-Sink Master Vanity/22.jpeg","file":"22.jpeg","folderName":"Executive Double-Sink Master Vanity","category":"renovations","title":"Executive Double-Sink Master Vanity","alt":"Executive Double-Sink Master Vanity - 22.jpeg","description":"Premium bathroom vanity install featuring under-mount double sink, dark wood accent mirror, and luxury vinyl flooring.","projectId":"Executive Double-Sink Master Vanity"}]},{"id":"Exterior Cedar Staircase & Railings","projectId":"Exterior Cedar Staircase & Railings","folderName":"Exterior Cedar Staircase & Railings","title":"Exterior Cedar Staircase & Railings","category":"building","coverImage":"7.jpeg","description":"Custom construction of exterior stair railings using premium weather-resistant cedar posts and heavy-duty metal safety handrails.","images":[{"filename":"Exterior Cedar Staircase & Railings/7.jpeg","file":"7.jpeg","folderName":"Exterior Cedar Staircase & Railings","category":"building","title":"Exterior Cedar Staircase & Railings","alt":"Exterior Cedar Staircase & Railings - 7.jpeg","description":"Custom construction of exterior stair railings using premium weather-resistant cedar posts and heavy-duty metal safety handrails.","projectId":"Exterior Cedar Staircase & Railings"},{"filename":"Exterior Cedar Staircase & Railings/8.jpeg","file":"8.jpeg","folderName":"Exterior Cedar Staircase & Railings","category":"building","title":"Exterior Cedar Staircase & Railings","alt":"Exterior Cedar Staircase & Railings - 8.jpeg","description":"Custom construction of exterior stair railings using premium weather-resistant cedar posts and heavy-duty metal safety handrails.","projectId":"Exterior Cedar Staircase & Railings"}]},{"id":"Gourmet Chef Kitchen","projectId":"Gourmet Chef Kitchen","folderName":"Gourmet Chef Kitchen","title":"Gourmet Chef Kitchen","category":"renovations","coverImage":"portfolio_kitchen.png","description":"","images":[{"filename":"portfolio_kitchen.png","file":"portfolio_kitchen.png","folderName":"Gourmet Chef Kitchen","category":"renovations","title":"Gourmet Chef Kitchen","alt":"Gourmet Chef Kitchen","description":"","projectId":"Gourmet Chef Kitchen"}]},{"id":"Luxury Spa Guest Bathroom","projectId":"Luxury Spa Guest Bathroom","folderName":"Luxury Spa Guest Bathroom","title":"Luxury Spa Guest Bathroom","category":"renovations","coverImage":"17.jpeg","description":"Renovation of a guest bathroom with durable wood-look vinyl plank flooring, sleek white vanity, and curved glass corner shower.","images":[{"filename":"Luxury Spa Guest Bathroom/17.jpeg","file":"17.jpeg","folderName":"Luxury Spa Guest Bathroom","category":"renovations","title":"Luxury Spa Guest Bathroom","alt":"Luxury Spa Guest Bathroom - 17.jpeg","description":"Renovation of a guest bathroom with durable wood-look vinyl plank flooring, sleek white vanity, and curved glass corner shower.","projectId":"Luxury Spa Guest Bathroom"},{"filename":"Luxury Spa Guest Bathroom/18.jpeg","file":"18.jpeg","folderName":"Luxury Spa Guest Bathroom","category":"renovations","title":"Luxury Spa Guest Bathroom","alt":"Luxury Spa Guest Bathroom - 18.jpeg","description":"Renovation of a guest bathroom with durable wood-look vinyl plank flooring, sleek white vanity, and curved glass corner shower.","projectId":"Luxury Spa Guest Bathroom"}]},{"id":"Madani Estate Backyard Pavilion","projectId":"Madani Estate Backyard Pavilion","folderName":"Madani Estate Backyard Pavilion","title":"Madani Estate Backyard Pavilion","category":"building","coverImage":"21.jpeg","description":"Custom outdoor kitchen pavilion framing featuring post-and-beam construction, tongue-and-groove cedar ceiling, and asphalt shingle roof.","images":[{"filename":"Madani Estate Backyard Pavilion/21.jpeg","file":"21.jpeg","folderName":"Madani Estate Backyard Pavilion","category":"building","title":"Madani Estate Backyard Pavilion","alt":"Madani Estate Backyard Pavilion - 21.jpeg","description":"Custom outdoor kitchen pavilion framing featuring post-and-beam construction, tongue-and-groove cedar ceiling, and asphalt shingle roof.","projectId":"Madani Estate Backyard Pavilion"},{"filename":"Madani Estate Backyard Pavilion/23.jpeg","file":"23.jpeg","folderName":"Madani Estate Backyard Pavilion","category":"building","title":"Madani Estate Backyard Pavilion","alt":"Madani Estate Backyard Pavilion - 23.jpeg","description":"Custom outdoor kitchen pavilion framing featuring post-and-beam construction, tongue-and-groove cedar ceiling, and asphalt shingle roof.","projectId":"Madani Estate Backyard Pavilion"},{"filename":"Madani Estate Backyard Pavilion/27.jpeg","file":"27.jpeg","folderName":"Madani Estate Backyard Pavilion","category":"building","title":"Madani Estate Backyard Pavilion","alt":"Madani Estate Backyard Pavilion - 27.jpeg","description":"Custom outdoor kitchen pavilion framing featuring post-and-beam construction, tongue-and-groove cedar ceiling, and asphalt shingle roof.","projectId":"Madani Estate Backyard Pavilion"},{"filename":"Madani Estate Backyard Pavilion/65.jpeg","file":"65.jpeg","folderName":"Madani Estate Backyard Pavilion","category":"building","title":"Madani Estate Backyard Pavilion","alt":"Madani Estate Backyard Pavilion - 65.jpeg","description":"Custom outdoor kitchen pavilion framing featuring post-and-beam construction, tongue-and-groove cedar ceiling, and asphalt shingle roof.","projectId":"Madani Estate Backyard Pavilion"},{"filename":"Madani Estate Backyard Pavilion/66.jpeg","file":"66.jpeg","folderName":"Madani Estate Backyard Pavilion","category":"building","title":"Madani Estate Backyard Pavilion","alt":"Madani Estate Backyard Pavilion - 66.jpeg","description":"Custom outdoor kitchen pavilion framing featuring post-and-beam construction, tongue-and-groove cedar ceiling, and asphalt shingle roof.","projectId":"Madani Estate Backyard Pavilion"}]},{"id":"Madani Executive Basement Suite","projectId":"Madani Executive Basement Suite","folderName":"Madani Executive Basement Suite","title":"Madani Executive Basement Suite","category":"renovations","coverImage":"36.jpeg","description":"Full basement makeover including luxury laundry space, built-in entertainment shelving, and marble tile shower screens.","images":[{"filename":"Madani Executive Basement Suite/20.jpeg","file":"20.jpeg","folderName":"Madani Executive Basement Suite","category":"renovations","title":"Madani Executive Basement Suite","alt":"Madani Executive Basement Suite - 20.jpeg","description":"Full basement makeover including luxury laundry space, built-in entertainment shelving, and marble tile shower screens.","projectId":"Madani Executive Basement Suite"},{"filename":"Madani Executive Basement Suite/33.jpeg","file":"33.jpeg","folderName":"Madani Executive Basement Suite","category":"renovations","title":"Madani Executive Basement Suite","alt":"Madani Executive Basement Suite - 33.jpeg","description":"Full basement makeover including luxury laundry space, built-in entertainment shelving, and marble tile shower screens.","projectId":"Madani Executive Basement Suite"},{"filename":"Madani Executive Basement Suite/35.jpeg","file":"35.jpeg","folderName":"Madani Executive Basement Suite","category":"renovations","title":"Madani Executive Basement Suite","alt":"Madani Executive Basement Suite - 35.jpeg","description":"Full basement makeover including luxury laundry space, built-in entertainment shelving, and marble tile shower screens.","projectId":"Madani Executive Basement Suite"},{"filename":"Madani Executive Basement Suite/36.jpeg","file":"36.jpeg","folderName":"Madani Executive Basement Suite","category":"renovations","title":"Madani Executive Basement Suite","alt":"Madani Executive Basement Suite - 36.jpeg","description":"Full basement makeover including luxury laundry space, built-in entertainment shelving, and marble tile shower screens.","projectId":"Madani Executive Basement Suite"},{"filename":"Madani Executive Basement Suite/37.jpeg","file":"37.jpeg","folderName":"Madani Executive Basement Suite","category":"renovations","title":"Madani Executive Basement Suite","alt":"Madani Executive Basement Suite - 37.jpeg","description":"Full basement makeover including luxury laundry space, built-in entertainment shelving, and marble tile shower screens.","projectId":"Madani Executive Basement Suite"},{"filename":"Madani Executive Basement Suite/42.jpeg","file":"42.jpeg","folderName":"Madani Executive Basement Suite","category":"renovations","title":"Madani Executive Basement Suite","alt":"Madani Executive Basement Suite - 42.jpeg","description":"Full basement makeover including luxury laundry space, built-in entertainment shelving, and marble tile shower screens.","projectId":"Madani Executive Basement Suite"},{"filename":"Madani Executive Basement Suite/43.jpeg","file":"43.jpeg","folderName":"Madani Executive Basement Suite","category":"renovations","title":"Madani Executive Basement Suite","alt":"Madani Executive Basement Suite - 43.jpeg","description":"Full basement makeover including luxury laundry space, built-in entertainment shelving, and marble tile shower screens.","projectId":"Madani Executive Basement Suite"},{"filename":"Madani Executive Basement Suite/45.jpeg","file":"45.jpeg","folderName":"Madani Executive Basement Suite","category":"renovations","title":"Madani Executive Basement Suite","alt":"Madani Executive Basement Suite - 45.jpeg","description":"Full basement makeover including luxury laundry space, built-in entertainment shelving, and marble tile shower screens.","projectId":"Madani Executive Basement Suite"},{"filename":"Madani Executive Basement Suite/5.jpeg","file":"5.jpeg","folderName":"Madani Executive Basement Suite","category":"renovations","title":"Madani Executive Basement Suite","alt":"Madani Executive Basement Suite - 5.jpeg","description":"Full basement makeover including luxury laundry space, built-in entertainment shelving, and marble tile shower screens.","projectId":"Madani Executive Basement Suite"},{"filename":"Madani Executive Basement Suite/6.jpeg","file":"6.jpeg","folderName":"Madani Executive Basement Suite","category":"renovations","title":"Madani Executive Basement Suite","alt":"Madani Executive Basement Suite - 6.jpeg","description":"Full basement makeover including luxury laundry space, built-in entertainment shelving, and marble tile shower screens.","projectId":"Madani Executive Basement Suite"}]},{"id":"Minimalist Maple Kitchen & Flooring","projectId":"Minimalist Maple Kitchen & Flooring","folderName":"Minimalist Maple Kitchen & Flooring","title":"Minimalist Maple Kitchen & Flooring","category":"flooring","coverImage":"19.jpeg","description":"Precision engineered maple flooring installed across living areas with matching threshold transition pieces.","images":[{"filename":"Minimalist Maple Kitchen & Flooring/19.jpeg","file":"19.jpeg","folderName":"Minimalist Maple Kitchen & Flooring","category":"flooring","title":"Minimalist Maple Kitchen & Flooring","alt":"Minimalist Maple Kitchen & Flooring - 19.jpeg","description":"Precision engineered maple flooring installed across living areas with matching threshold transition pieces.","projectId":"Minimalist Maple Kitchen & Flooring"}]},{"id":"Modern Glass Panel Staircase","projectId":"Modern Glass Panel Staircase","folderName":"Modern Glass Panel Staircase","title":"Modern Glass Panel Staircase","category":"renovations","coverImage":"1.jpeg","description":"Custom staircase transformation replacing traditional wood spindles with modern tempered glass panels and matte black railings.","images":[{"filename":"Modern Glass Panel Staircase/1.jpeg","file":"1.jpeg","folderName":"Modern Glass Panel Staircase","category":"renovations","title":"Modern Glass Panel Staircase","alt":"Modern Glass Panel Staircase - 1.jpeg","description":"Custom staircase transformation replacing traditional wood spindles with modern tempered glass panels and matte black railings.","projectId":"Modern Glass Panel Staircase"}]},{"id":"Modern Marble Freestanding Bath","projectId":"Modern Marble Freestanding Bath","folderName":"Modern Marble Freestanding Bath","title":"Modern Marble Freestanding Bath","category":"renovations","coverImage":"57.jpeg","description":"High-end master bath upgrade featuring modern oval freestanding tub, floor-mounted chrome faucet, and floor-to-ceiling marble wall tile.","images":[{"filename":"Modern Marble Freestanding Bath/56.jpeg","file":"56.jpeg","folderName":"Modern Marble Freestanding Bath","category":"renovations","title":"Modern Marble Freestanding Bath","alt":"Modern Marble Freestanding Bath - 56.jpeg","description":"High-end master bath upgrade featuring modern oval freestanding tub, floor-mounted chrome faucet, and floor-to-ceiling marble wall tile.","projectId":"Modern Marble Freestanding Bath"},{"filename":"Modern Marble Freestanding Bath/57.jpeg","file":"57.jpeg","folderName":"Modern Marble Freestanding Bath","category":"renovations","title":"Modern Marble Freestanding Bath","alt":"Modern Marble Freestanding Bath - 57.jpeg","description":"High-end master bath upgrade featuring modern oval freestanding tub, floor-mounted chrome faucet, and floor-to-ceiling marble wall tile.","projectId":"Modern Marble Freestanding Bath"},{"filename":"Modern Marble Freestanding Bath/58.jpeg","file":"58.jpeg","folderName":"Modern Marble Freestanding Bath","category":"renovations","title":"Modern Marble Freestanding Bath","alt":"Modern Marble Freestanding Bath - 58.jpeg","description":"High-end master bath upgrade featuring modern oval freestanding tub, floor-mounted chrome faucet, and floor-to-ceiling marble wall tile.","projectId":"Modern Marble Freestanding Bath"},{"filename":"Modern Marble Freestanding Bath/59.jpeg","file":"59.jpeg","folderName":"Modern Marble Freestanding Bath","category":"renovations","title":"Modern Marble Freestanding Bath","alt":"Modern Marble Freestanding Bath - 59.jpeg","description":"High-end master bath upgrade featuring modern oval freestanding tub, floor-mounted chrome faucet, and floor-to-ceiling marble wall tile.","projectId":"Modern Marble Freestanding Bath"},{"filename":"Modern Marble Freestanding Bath/60.jpeg","file":"60.jpeg","folderName":"Modern Marble Freestanding Bath","category":"renovations","title":"Modern Marble Freestanding Bath","alt":"Modern Marble Freestanding Bath - 60.jpeg","description":"High-end master bath upgrade featuring modern oval freestanding tub, floor-mounted chrome faucet, and floor-to-ceiling marble wall tile.","projectId":"Modern Marble Freestanding Bath"}]},{"id":"Modern Oak & Quartz Kitchen","projectId":"Modern Oak & Quartz Kitchen","folderName":"Modern Oak & Quartz Kitchen","title":"Modern Oak & Quartz Kitchen","category":"renovations","coverImage":"11.jpeg","description":"Full kitchen renovation featuring white shaker cabinetry, white quartz countertops, central white oak island, and chevron hardwood flooring.","images":[{"filename":"Modern Oak & Quartz Kitchen/11.jpeg","file":"11.jpeg","folderName":"Modern Oak & Quartz Kitchen","category":"renovations","title":"Modern Oak & Quartz Kitchen","alt":"Modern Oak & Quartz Kitchen - 11.jpeg","description":"Full kitchen renovation featuring white shaker cabinetry, white quartz countertops, central white oak island, and chevron hardwood flooring.","projectId":"Modern Oak & Quartz Kitchen"},{"filename":"Modern Oak & Quartz Kitchen/29.jpeg","file":"29.jpeg","folderName":"Modern Oak & Quartz Kitchen","category":"renovations","title":"Modern Oak & Quartz Kitchen","alt":"Modern Oak & Quartz Kitchen - 29.jpeg","description":"Full kitchen renovation featuring white shaker cabinetry, white quartz countertops, central white oak island, and chevron hardwood flooring.","projectId":"Modern Oak & Quartz Kitchen"}]},{"id":"Open-Concept Living & Vinyl Flooring","projectId":"Open-Concept Living & Vinyl Flooring","folderName":"Open-Concept Living & Vinyl Flooring","title":"Open-Concept Living & Vinyl Flooring","category":"renovations","coverImage":"16.jpeg","description":"Living area remodeling highlighting structural beam removal for open floor plan paired with high-traffic luxury vinyl plank flooring.","images":[{"filename":"Open-Concept Living & Vinyl Flooring/13.jpeg","file":"13.jpeg","folderName":"Open-Concept Living & Vinyl Flooring","category":"renovations","title":"Open-Concept Living & Vinyl Flooring","alt":"Open-Concept Living & Vinyl Flooring - 13.jpeg","description":"Living area remodeling highlighting structural beam removal for open floor plan paired with high-traffic luxury vinyl plank flooring.","projectId":"Open-Concept Living & Vinyl Flooring"},{"filename":"Open-Concept Living & Vinyl Flooring/14.jpeg","file":"14.jpeg","folderName":"Open-Concept Living & Vinyl Flooring","category":"renovations","title":"Open-Concept Living & Vinyl Flooring","alt":"Open-Concept Living & Vinyl Flooring - 14.jpeg","description":"Living area remodeling highlighting structural beam removal for open floor plan paired with high-traffic luxury vinyl plank flooring.","projectId":"Open-Concept Living & Vinyl Flooring"},{"filename":"Open-Concept Living & Vinyl Flooring/16.jpeg","file":"16.jpeg","folderName":"Open-Concept Living & Vinyl Flooring","category":"renovations","title":"Open-Concept Living & Vinyl Flooring","alt":"Open-Concept Living & Vinyl Flooring - 16.jpeg","description":"Living area remodeling highlighting structural beam removal for open floor plan paired with high-traffic luxury vinyl plank flooring.","projectId":"Open-Concept Living & Vinyl Flooring"}]},{"id":"project-hardwood-floor","projectId":"project-hardwood-floor","folderName":"Wide-Plank Oak Master Suite","title":"Wide-Plank Oak Master Suite","category":"flooring","coverImage":"9.jpeg","description":"Precision installation of wide-plank light oak engineered hardwood flooring showing seamless wood grain finish across living spaces.","images":[{"filename":"Wide-Plank Oak Master Suite/10.jpeg","file":"10.jpeg","folderName":"Wide-Plank Oak Master Suite","category":"flooring","title":"Wide-Plank Oak Master Suite","alt":"Wide-Plank Oak Master Suite - 10.jpeg","description":"Precision installation of wide-plank light oak engineered hardwood flooring showing seamless wood grain finish across living spaces.","projectId":"project-hardwood-floor"},{"filename":"Wide-Plank Oak Master Suite/9.jpeg","file":"9.jpeg","folderName":"Wide-Plank Oak Master Suite","category":"flooring","title":"Wide-Plank Oak Master Suite","alt":"Wide-Plank Oak Master Suite - 9.jpeg","description":"Precision installation of wide-plank light oak engineered hardwood flooring showing seamless wood grain finish across living spaces.","projectId":"project-hardwood-floor"}]}];
+const PORTFOLIO_IMAGES = [
+  {
+    "id": "Artisan Walnut & Hardwood Kitchen",
+    "projectId": "Artisan Walnut & Hardwood Kitchen",
+    "folderName": "Artisan Walnut & Hardwood Kitchen",
+    "title": "Artisan Walnut & Hardwood Kitchen",
+    "category": "flooring",
+    "coverImage": "67.jpeg",
+    "description": "Custom dark walnut inlay border framing a fireplace hearth and luxury cork flooring showcase.",
+    "images": [
+      {
+        "filename": "Artisan Walnut & Hardwood Kitchen/63.jpeg",
+        "file": "63.jpeg",
+        "folderName": "Artisan Walnut & Hardwood Kitchen",
+        "category": "flooring",
+        "title": "Artisan Walnut & Hardwood Kitchen",
+        "alt": "Artisan Walnut & Hardwood Kitchen - 63.jpeg",
+        "description": "Custom dark walnut inlay border framing a fireplace hearth and luxury cork flooring showcase.",
+        "projectId": "Artisan Walnut & Hardwood Kitchen"
+      },
+      {
+        "filename": "Artisan Walnut & Hardwood Kitchen/64.jpeg",
+        "file": "64.jpeg",
+        "folderName": "Artisan Walnut & Hardwood Kitchen",
+        "category": "flooring",
+        "title": "Artisan Walnut & Hardwood Kitchen",
+        "alt": "Artisan Walnut & Hardwood Kitchen - 64.jpeg",
+        "description": "Custom dark walnut inlay border framing a fireplace hearth and luxury cork flooring showcase.",
+        "projectId": "Artisan Walnut & Hardwood Kitchen"
+      },
+      {
+        "filename": "Artisan Walnut & Hardwood Kitchen/67.jpeg",
+        "file": "67.jpeg",
+        "folderName": "Artisan Walnut & Hardwood Kitchen",
+        "category": "flooring",
+        "title": "Artisan Walnut & Hardwood Kitchen",
+        "alt": "Artisan Walnut & Hardwood Kitchen - 67.jpeg",
+        "description": "Custom dark walnut inlay border framing a fireplace hearth and luxury cork flooring showcase.",
+        "projectId": "Artisan Walnut & Hardwood Kitchen"
+      }
+    ]
+  },
+  {
+    "id": "Backlit Ledgestone Fireplace Suite",
+    "projectId": "Backlit Ledgestone Fireplace Suite",
+    "folderName": "Backlit Ledgestone Fireplace Suite",
+    "title": "Backlit Ledgestone Fireplace Suite",
+    "category": "renovations",
+    "coverImage": "4.jpeg",
+    "description": "Floor-to-ceiling split stone fireplace wall transformation with floating mantel and custom built-in shelves with integrated warm LED lighting.",
+    "images": [
+      {
+        "filename": "Backlit Ledgestone Fireplace Suite/24.jpeg",
+        "file": "24.jpeg",
+        "folderName": "Backlit Ledgestone Fireplace Suite",
+        "category": "renovations",
+        "title": "Backlit Ledgestone Fireplace Suite",
+        "alt": "Backlit Ledgestone Fireplace Suite - 24.jpeg",
+        "description": "Floor-to-ceiling split stone fireplace wall transformation with floating mantel and custom built-in shelves with integrated warm LED lighting.",
+        "projectId": "Backlit Ledgestone Fireplace Suite"
+      },
+      {
+        "filename": "Backlit Ledgestone Fireplace Suite/25.jpeg",
+        "file": "25.jpeg",
+        "folderName": "Backlit Ledgestone Fireplace Suite",
+        "category": "renovations",
+        "title": "Backlit Ledgestone Fireplace Suite",
+        "alt": "Backlit Ledgestone Fireplace Suite - 25.jpeg",
+        "description": "Floor-to-ceiling split stone fireplace wall transformation with floating mantel and custom built-in shelves with integrated warm LED lighting.",
+        "projectId": "Backlit Ledgestone Fireplace Suite"
+      },
+      {
+        "filename": "Backlit Ledgestone Fireplace Suite/26.jpeg",
+        "file": "26.jpeg",
+        "folderName": "Backlit Ledgestone Fireplace Suite",
+        "category": "renovations",
+        "title": "Backlit Ledgestone Fireplace Suite",
+        "alt": "Backlit Ledgestone Fireplace Suite - 26.jpeg",
+        "description": "Floor-to-ceiling split stone fireplace wall transformation with floating mantel and custom built-in shelves with integrated warm LED lighting.",
+        "projectId": "Backlit Ledgestone Fireplace Suite"
+      },
+      {
+        "filename": "Backlit Ledgestone Fireplace Suite/28.jpeg",
+        "file": "28.jpeg",
+        "folderName": "Backlit Ledgestone Fireplace Suite",
+        "category": "renovations",
+        "title": "Backlit Ledgestone Fireplace Suite",
+        "alt": "Backlit Ledgestone Fireplace Suite - 28.jpeg",
+        "description": "Floor-to-ceiling split stone fireplace wall transformation with floating mantel and custom built-in shelves with integrated warm LED lighting.",
+        "projectId": "Backlit Ledgestone Fireplace Suite"
+      },
+      {
+        "filename": "Backlit Ledgestone Fireplace Suite/32.jpeg",
+        "file": "32.jpeg",
+        "folderName": "Backlit Ledgestone Fireplace Suite",
+        "category": "renovations",
+        "title": "Backlit Ledgestone Fireplace Suite",
+        "alt": "Backlit Ledgestone Fireplace Suite - 32.jpeg",
+        "description": "Floor-to-ceiling split stone fireplace wall transformation with floating mantel and custom built-in shelves with integrated warm LED lighting.",
+        "projectId": "Backlit Ledgestone Fireplace Suite"
+      },
+      {
+        "filename": "Backlit Ledgestone Fireplace Suite/4.jpeg",
+        "file": "4.jpeg",
+        "folderName": "Backlit Ledgestone Fireplace Suite",
+        "category": "renovations",
+        "title": "Backlit Ledgestone Fireplace Suite",
+        "alt": "Backlit Ledgestone Fireplace Suite - 4.jpeg",
+        "description": "Floor-to-ceiling split stone fireplace wall transformation with floating mantel and custom built-in shelves with integrated warm LED lighting.",
+        "projectId": "Backlit Ledgestone Fireplace Suite"
+      }
+    ]
+  },
+  {
+    "id": "project-hardwood-floor",
+    "projectId": "project-hardwood-floor",
+    "folderName": "Wide-Plank Oak Master Suite",
+    "title": "Wide-Plank Oak Master Suite",
+    "category": "flooring",
+    "coverImage": "9.jpeg",
+    "description": "Precision installation of wide-plank light oak engineered hardwood flooring showing seamless wood grain finish across living spaces.",
+    "images": [
+      {
+        "filename": "Wide-Plank Oak Master Suite/10.jpeg",
+        "file": "10.jpeg",
+        "folderName": "Wide-Plank Oak Master Suite",
+        "category": "flooring",
+        "title": "Wide-Plank Oak Master Suite",
+        "alt": "Wide-Plank Oak Master Suite - 10.jpeg",
+        "description": "Precision installation of wide-plank light oak engineered hardwood flooring showing seamless wood grain finish across living spaces.",
+        "projectId": "project-hardwood-floor"
+      },
+      {
+        "filename": "Wide-Plank Oak Master Suite/9.jpeg",
+        "file": "9.jpeg",
+        "folderName": "Wide-Plank Oak Master Suite",
+        "category": "flooring",
+        "title": "Wide-Plank Oak Master Suite",
+        "alt": "Wide-Plank Oak Master Suite - 9.jpeg",
+        "description": "Precision installation of wide-plank light oak engineered hardwood flooring showing seamless wood grain finish across living spaces.",
+        "projectId": "project-hardwood-floor"
+      }
+    ]
+  },
+  {
+    "id": "Contemporary Living & Deck Suite",
+    "projectId": "Contemporary Living & Deck Suite",
+    "folderName": "Contemporary Living & Deck Suite",
+    "title": "Contemporary Living & Deck Suite",
+    "category": "building",
+    "coverImage": "53.jpeg",
+    "description": "Installation of modern grey composite deck boards utilizing hidden fastener clips and living room fireplace mantel accents.",
+    "images": [
+      {
+        "filename": "Contemporary Living & Deck Suite/53.jpeg",
+        "file": "53.jpeg",
+        "folderName": "Contemporary Living & Deck Suite",
+        "category": "building",
+        "title": "Contemporary Living & Deck Suite",
+        "alt": "Contemporary Living & Deck Suite - 53.jpeg",
+        "description": "Installation of modern grey composite deck boards utilizing hidden fastener clips and living room fireplace mantel accents.",
+        "projectId": "Contemporary Living & Deck Suite"
+      },
+      {
+        "filename": "Contemporary Living & Deck Suite/61.jpeg",
+        "file": "61.jpeg",
+        "folderName": "Contemporary Living & Deck Suite",
+        "category": "building",
+        "title": "Contemporary Living & Deck Suite",
+        "alt": "Contemporary Living & Deck Suite - 61.jpeg",
+        "description": "Installation of modern grey composite deck boards utilizing hidden fastener clips and living room fireplace mantel accents.",
+        "projectId": "Contemporary Living & Deck Suite"
+      }
+    ]
+  },
+  {
+    "id": "Craftsman Kitchen & Window Millwork",
+    "projectId": "Craftsman Kitchen & Window Millwork",
+    "folderName": "Craftsman Kitchen & Window Millwork",
+    "title": "Craftsman Kitchen & Window Millwork",
+    "category": "installer",
+    "coverImage": "30.jpeg",
+    "description": "Craftsman style window trim casing installation using premium pine boards, prepped and painted to perfection.",
+    "images": [
+      {
+        "filename": "Craftsman Kitchen & Window Millwork/30.jpeg",
+        "file": "30.jpeg",
+        "folderName": "Craftsman Kitchen & Window Millwork",
+        "category": "installer",
+        "title": "Craftsman Kitchen & Window Millwork",
+        "alt": "Craftsman Kitchen & Window Millwork - 30.jpeg",
+        "description": "Craftsman style window trim casing installation using premium pine boards, prepped and painted to perfection.",
+        "projectId": "Craftsman Kitchen & Window Millwork"
+      }
+    ]
+  },
+  {
+    "id": "Custom Timber Bunk Bedroom",
+    "projectId": "Custom Timber Bunk Bedroom",
+    "folderName": "Custom Timber Bunk Bedroom",
+    "title": "Custom Timber Bunk Bedroom",
+    "category": "installer",
+    "coverImage": "31.jpeg",
+    "description": "Custom handcrafted timber bunk beds and built-in bedroom joinery optimized for residential space efficiency.",
+    "images": [
+      {
+        "filename": "Custom Timber Bunk Bedroom/31.jpeg",
+        "file": "31.jpeg",
+        "folderName": "Custom Timber Bunk Bedroom",
+        "category": "installer",
+        "title": "Custom Timber Bunk Bedroom",
+        "alt": "Custom Timber Bunk Bedroom - 31.jpeg",
+        "description": "Custom handcrafted timber bunk beds and built-in bedroom joinery optimized for residential space efficiency.",
+        "projectId": "Custom Timber Bunk Bedroom"
+      }
+    ]
+  },
+  {
+    "id": "Custom Utility & Laundry Suite",
+    "projectId": "Custom Utility & Laundry Suite",
+    "folderName": "Custom Utility & Laundry Suite",
+    "title": "Custom Utility & Laundry Suite",
+    "category": "renovations",
+    "coverImage": "12.jpeg",
+    "description": "Space-saving laundry area renovation featuring stacked washer-dryer installation, custom door framing, and grey floor tiling.",
+    "images": [
+      {
+        "filename": "Custom Utility & Laundry Suite/12.jpeg",
+        "file": "12.jpeg",
+        "folderName": "Custom Utility & Laundry Suite",
+        "category": "renovations",
+        "title": "Custom Utility & Laundry Suite",
+        "alt": "Custom Utility & Laundry Suite - 12.jpeg",
+        "description": "Space-saving laundry area renovation featuring stacked washer-dryer installation, custom door framing, and grey floor tiling.",
+        "projectId": "Custom Utility & Laundry Suite"
+      }
+    ]
+  },
+  {
+    "id": "Elevated Cedar Deck & Patio Stairs",
+    "projectId": "Elevated Cedar Deck & Patio Stairs",
+    "folderName": "Elevated Cedar Deck & Patio Stairs",
+    "title": "Elevated Cedar Deck & Patio Stairs",
+    "category": "renovations",
+    "coverImage": "2.jpeg",
+    "description": "Complete demolition and rebuild of a damaged elevated deck featuring premium wood joists, composite boards, and glass railings.",
+    "images": [
+      {
+        "filename": "Elevated Cedar Deck & Patio Stairs/2.jpeg",
+        "file": "2.jpeg",
+        "folderName": "Elevated Cedar Deck & Patio Stairs",
+        "category": "renovations",
+        "title": "Elevated Cedar Deck & Patio Stairs",
+        "alt": "Elevated Cedar Deck & Patio Stairs - 2.jpeg",
+        "description": "Complete demolition and rebuild of a damaged elevated deck featuring premium wood joists, composite boards, and glass railings.",
+        "projectId": "Elevated Cedar Deck & Patio Stairs"
+      },
+      {
+        "filename": "Elevated Cedar Deck & Patio Stairs/44.jpeg",
+        "file": "44.jpeg",
+        "folderName": "Elevated Cedar Deck & Patio Stairs",
+        "category": "renovations",
+        "title": "Elevated Cedar Deck & Patio Stairs",
+        "alt": "Elevated Cedar Deck & Patio Stairs - 44.jpeg",
+        "description": "Complete demolition and rebuild of a damaged elevated deck featuring premium wood joists, composite boards, and glass railings.",
+        "projectId": "Elevated Cedar Deck & Patio Stairs"
+      },
+      {
+        "filename": "Elevated Cedar Deck & Patio Stairs/46.jpeg",
+        "file": "46.jpeg",
+        "folderName": "Elevated Cedar Deck & Patio Stairs",
+        "category": "renovations",
+        "title": "Elevated Cedar Deck & Patio Stairs",
+        "alt": "Elevated Cedar Deck & Patio Stairs - 46.jpeg",
+        "description": "Complete demolition and rebuild of a damaged elevated deck featuring premium wood joists, composite boards, and glass railings.",
+        "projectId": "Elevated Cedar Deck & Patio Stairs"
+      },
+      {
+        "filename": "Elevated Cedar Deck & Patio Stairs/47.jpeg",
+        "file": "47.jpeg",
+        "folderName": "Elevated Cedar Deck & Patio Stairs",
+        "category": "renovations",
+        "title": "Elevated Cedar Deck & Patio Stairs",
+        "alt": "Elevated Cedar Deck & Patio Stairs - 47.jpeg",
+        "description": "Complete demolition and rebuild of a damaged elevated deck featuring premium wood joists, composite boards, and glass railings.",
+        "projectId": "Elevated Cedar Deck & Patio Stairs"
+      },
+      {
+        "filename": "Elevated Cedar Deck & Patio Stairs/48.jpeg",
+        "file": "48.jpeg",
+        "folderName": "Elevated Cedar Deck & Patio Stairs",
+        "category": "renovations",
+        "title": "Elevated Cedar Deck & Patio Stairs",
+        "alt": "Elevated Cedar Deck & Patio Stairs - 48.jpeg",
+        "description": "Complete demolition and rebuild of a damaged elevated deck featuring premium wood joists, composite boards, and glass railings.",
+        "projectId": "Elevated Cedar Deck & Patio Stairs"
+      },
+      {
+        "filename": "Elevated Cedar Deck & Patio Stairs/49.jpeg",
+        "file": "49.jpeg",
+        "folderName": "Elevated Cedar Deck & Patio Stairs",
+        "category": "renovations",
+        "title": "Elevated Cedar Deck & Patio Stairs",
+        "alt": "Elevated Cedar Deck & Patio Stairs - 49.jpeg",
+        "description": "Complete demolition and rebuild of a damaged elevated deck featuring premium wood joists, composite boards, and glass railings.",
+        "projectId": "Elevated Cedar Deck & Patio Stairs"
+      },
+      {
+        "filename": "Elevated Cedar Deck & Patio Stairs/50.jpeg",
+        "file": "50.jpeg",
+        "folderName": "Elevated Cedar Deck & Patio Stairs",
+        "category": "renovations",
+        "title": "Elevated Cedar Deck & Patio Stairs",
+        "alt": "Elevated Cedar Deck & Patio Stairs - 50.jpeg",
+        "description": "Complete demolition and rebuild of a damaged elevated deck featuring premium wood joists, composite boards, and glass railings.",
+        "projectId": "Elevated Cedar Deck & Patio Stairs"
+      },
+      {
+        "filename": "Elevated Cedar Deck & Patio Stairs/51.jpeg",
+        "file": "51.jpeg",
+        "folderName": "Elevated Cedar Deck & Patio Stairs",
+        "category": "renovations",
+        "title": "Elevated Cedar Deck & Patio Stairs",
+        "alt": "Elevated Cedar Deck & Patio Stairs - 51.jpeg",
+        "description": "Complete demolition and rebuild of a damaged elevated deck featuring premium wood joists, composite boards, and glass railings.",
+        "projectId": "Elevated Cedar Deck & Patio Stairs"
+      },
+      {
+        "filename": "Elevated Cedar Deck & Patio Stairs/52.jpeg",
+        "file": "52.jpeg",
+        "folderName": "Elevated Cedar Deck & Patio Stairs",
+        "category": "renovations",
+        "title": "Elevated Cedar Deck & Patio Stairs",
+        "alt": "Elevated Cedar Deck & Patio Stairs - 52.jpeg",
+        "description": "Complete demolition and rebuild of a damaged elevated deck featuring premium wood joists, composite boards, and glass railings.",
+        "projectId": "Elevated Cedar Deck & Patio Stairs"
+      },
+      {
+        "filename": "Elevated Cedar Deck & Patio Stairs/54.jpeg",
+        "file": "54.jpeg",
+        "folderName": "Elevated Cedar Deck & Patio Stairs",
+        "category": "renovations",
+        "title": "Elevated Cedar Deck & Patio Stairs",
+        "alt": "Elevated Cedar Deck & Patio Stairs - 54.jpeg",
+        "description": "Complete demolition and rebuild of a damaged elevated deck featuring premium wood joists, composite boards, and glass railings.",
+        "projectId": "Elevated Cedar Deck & Patio Stairs"
+      },
+      {
+        "filename": "Elevated Cedar Deck & Patio Stairs/55.jpeg",
+        "file": "55.jpeg",
+        "folderName": "Elevated Cedar Deck & Patio Stairs",
+        "category": "renovations",
+        "title": "Elevated Cedar Deck & Patio Stairs",
+        "alt": "Elevated Cedar Deck & Patio Stairs - 55.jpeg",
+        "description": "Complete demolition and rebuild of a damaged elevated deck featuring premium wood joists, composite boards, and glass railings.",
+        "projectId": "Elevated Cedar Deck & Patio Stairs"
+      },
+      {
+        "filename": "Elevated Cedar Deck & Patio Stairs/62.jpeg",
+        "file": "62.jpeg",
+        "folderName": "Elevated Cedar Deck & Patio Stairs",
+        "category": "renovations",
+        "title": "Elevated Cedar Deck & Patio Stairs",
+        "alt": "Elevated Cedar Deck & Patio Stairs - 62.jpeg",
+        "description": "Complete demolition and rebuild of a damaged elevated deck featuring premium wood joists, composite boards, and glass railings.",
+        "projectId": "Elevated Cedar Deck & Patio Stairs"
+      }
+    ]
+  },
+  {
+    "id": "Executive Double-Sink Master Vanity",
+    "projectId": "Executive Double-Sink Master Vanity",
+    "folderName": "Executive Double-Sink Master Vanity",
+    "title": "Executive Double-Sink Master Vanity",
+    "category": "renovations",
+    "coverImage": "22.jpeg",
+    "description": "Premium bathroom vanity install featuring under-mount double sink, dark wood accent mirror, and luxury vinyl flooring.",
+    "images": [
+      {
+        "filename": "Executive Double-Sink Master Vanity/15.jpeg",
+        "file": "15.jpeg",
+        "folderName": "Executive Double-Sink Master Vanity",
+        "category": "renovations",
+        "title": "Executive Double-Sink Master Vanity",
+        "alt": "Executive Double-Sink Master Vanity - 15.jpeg",
+        "description": "Premium bathroom vanity install featuring under-mount double sink, dark wood accent mirror, and luxury vinyl flooring.",
+        "projectId": "Executive Double-Sink Master Vanity"
+      },
+      {
+        "filename": "Executive Double-Sink Master Vanity/22.jpeg",
+        "file": "22.jpeg",
+        "folderName": "Executive Double-Sink Master Vanity",
+        "category": "renovations",
+        "title": "Executive Double-Sink Master Vanity",
+        "alt": "Executive Double-Sink Master Vanity - 22.jpeg",
+        "description": "Premium bathroom vanity install featuring under-mount double sink, dark wood accent mirror, and luxury vinyl flooring.",
+        "projectId": "Executive Double-Sink Master Vanity"
+      }
+    ]
+  },
+  {
+    "id": "Exterior Cedar Staircase & Railings",
+    "projectId": "Exterior Cedar Staircase & Railings",
+    "folderName": "Exterior Cedar Staircase & Railings",
+    "title": "Exterior Cedar Staircase & Railings",
+    "category": "building",
+    "coverImage": "7.jpeg",
+    "description": "Custom construction of exterior stair railings using premium weather-resistant cedar posts and heavy-duty metal safety handrails.",
+    "images": [
+      {
+        "filename": "Exterior Cedar Staircase & Railings/7.jpeg",
+        "file": "7.jpeg",
+        "folderName": "Exterior Cedar Staircase & Railings",
+        "category": "building",
+        "title": "Exterior Cedar Staircase & Railings",
+        "alt": "Exterior Cedar Staircase & Railings - 7.jpeg",
+        "description": "Custom construction of exterior stair railings using premium weather-resistant cedar posts and heavy-duty metal safety handrails.",
+        "projectId": "Exterior Cedar Staircase & Railings"
+      },
+      {
+        "filename": "Exterior Cedar Staircase & Railings/8.jpeg",
+        "file": "8.jpeg",
+        "folderName": "Exterior Cedar Staircase & Railings",
+        "category": "building",
+        "title": "Exterior Cedar Staircase & Railings",
+        "alt": "Exterior Cedar Staircase & Railings - 8.jpeg",
+        "description": "Custom construction of exterior stair railings using premium weather-resistant cedar posts and heavy-duty metal safety handrails.",
+        "projectId": "Exterior Cedar Staircase & Railings"
+      }
+    ]
+  },
+  {
+    "id": "Gourmet Chef Kitchen",
+    "projectId": "Gourmet Chef Kitchen",
+    "folderName": "Gourmet Chef Kitchen",
+    "title": "Gourmet Chef Kitchen",
+    "category": "renovations",
+    "coverImage": "portfolio_kitchen.png",
+    "description": "",
+    "images": [
+      {
+        "filename": "portfolio_kitchen.png",
+        "file": "portfolio_kitchen.png",
+        "folderName": "Gourmet Chef Kitchen",
+        "category": "renovations",
+        "title": "Gourmet Chef Kitchen",
+        "alt": "Gourmet Chef Kitchen",
+        "description": "",
+        "projectId": "Gourmet Chef Kitchen"
+      }
+    ]
+  },
+  {
+    "id": "Luxury Spa Guest Bathroom",
+    "projectId": "Luxury Spa Guest Bathroom",
+    "folderName": "Luxury Spa Guest Bathroom",
+    "title": "Luxury Spa Guest Bathroom",
+    "category": "renovations",
+    "coverImage": "17.jpeg",
+    "description": "Renovation of a guest bathroom with durable wood-look vinyl plank flooring, sleek white vanity, and curved glass corner shower.",
+    "images": [
+      {
+        "filename": "Luxury Spa Guest Bathroom/17.jpeg",
+        "file": "17.jpeg",
+        "folderName": "Luxury Spa Guest Bathroom",
+        "category": "renovations",
+        "title": "Luxury Spa Guest Bathroom",
+        "alt": "Luxury Spa Guest Bathroom - 17.jpeg",
+        "description": "Renovation of a guest bathroom with durable wood-look vinyl plank flooring, sleek white vanity, and curved glass corner shower.",
+        "projectId": "Luxury Spa Guest Bathroom"
+      },
+      {
+        "filename": "Luxury Spa Guest Bathroom/18.jpeg",
+        "file": "18.jpeg",
+        "folderName": "Luxury Spa Guest Bathroom",
+        "category": "renovations",
+        "title": "Luxury Spa Guest Bathroom",
+        "alt": "Luxury Spa Guest Bathroom - 18.jpeg",
+        "description": "Renovation of a guest bathroom with durable wood-look vinyl plank flooring, sleek white vanity, and curved glass corner shower.",
+        "projectId": "Luxury Spa Guest Bathroom"
+      }
+    ]
+  },
+  {
+    "id": "Madani Estate Backyard Pavilion",
+    "projectId": "Madani Estate Backyard Pavilion",
+    "folderName": "Madani Estate Backyard Pavilion",
+    "title": "Madani Estate Backyard Pavilion",
+    "category": "fencing",
+    "coverImage": "21.jpeg",
+    "description": "Custom outdoor kitchen pavilion framing featuring post-and-beam construction, tongue-and-groove cedar ceiling, and asphalt shingle roof.",
+    "images": [
+      {
+        "filename": "Madani Estate Backyard Pavilion/21.jpeg",
+        "file": "21.jpeg",
+        "folderName": "Madani Estate Backyard Pavilion",
+        "category": "fencing",
+        "title": "Madani Estate Backyard Pavilion",
+        "alt": "Madani Estate Backyard Pavilion - 21.jpeg",
+        "description": "Custom outdoor kitchen pavilion framing featuring post-and-beam construction, tongue-and-groove cedar ceiling, and asphalt shingle roof.",
+        "projectId": "Madani Estate Backyard Pavilion"
+      },
+      {
+        "filename": "Madani Estate Backyard Pavilion/23.jpeg",
+        "file": "23.jpeg",
+        "folderName": "Madani Estate Backyard Pavilion",
+        "category": "fencing",
+        "title": "Madani Estate Backyard Pavilion",
+        "alt": "Madani Estate Backyard Pavilion - 23.jpeg",
+        "description": "Custom outdoor kitchen pavilion framing featuring post-and-beam construction, tongue-and-groove cedar ceiling, and asphalt shingle roof.",
+        "projectId": "Madani Estate Backyard Pavilion"
+      },
+      {
+        "filename": "Madani Estate Backyard Pavilion/27.jpeg",
+        "file": "27.jpeg",
+        "folderName": "Madani Estate Backyard Pavilion",
+        "category": "fencing",
+        "title": "Madani Estate Backyard Pavilion",
+        "alt": "Madani Estate Backyard Pavilion - 27.jpeg",
+        "description": "Custom outdoor kitchen pavilion framing featuring post-and-beam construction, tongue-and-groove cedar ceiling, and asphalt shingle roof.",
+        "projectId": "Madani Estate Backyard Pavilion"
+      },
+      {
+        "filename": "Madani Estate Backyard Pavilion/65.jpeg",
+        "file": "65.jpeg",
+        "folderName": "Madani Estate Backyard Pavilion",
+        "category": "fencing",
+        "title": "Madani Estate Backyard Pavilion",
+        "alt": "Madani Estate Backyard Pavilion - 65.jpeg",
+        "description": "Custom outdoor kitchen pavilion framing featuring post-and-beam construction, tongue-and-groove cedar ceiling, and asphalt shingle roof.",
+        "projectId": "Madani Estate Backyard Pavilion"
+      },
+      {
+        "filename": "Madani Estate Backyard Pavilion/66.jpeg",
+        "file": "66.jpeg",
+        "folderName": "Madani Estate Backyard Pavilion",
+        "category": "fencing",
+        "title": "Madani Estate Backyard Pavilion",
+        "alt": "Madani Estate Backyard Pavilion - 66.jpeg",
+        "description": "Custom outdoor kitchen pavilion framing featuring post-and-beam construction, tongue-and-groove cedar ceiling, and asphalt shingle roof.",
+        "projectId": "Madani Estate Backyard Pavilion"
+      }
+    ]
+  },
+  {
+    "id": "Madani Executive Basement Suite",
+    "projectId": "Madani Executive Basement Suite",
+    "folderName": "Madani Executive Basement Suite",
+    "title": "Madani Executive Basement Suite",
+    "category": "renovations",
+    "coverImage": "36.jpeg",
+    "description": "Full basement makeover including luxury laundry space, built-in entertainment shelving, and marble tile shower screens.",
+    "images": [
+      {
+        "filename": "Madani Executive Basement Suite/20.jpeg",
+        "file": "20.jpeg",
+        "folderName": "Madani Executive Basement Suite",
+        "category": "renovations",
+        "title": "Madani Executive Basement Suite",
+        "alt": "Madani Executive Basement Suite - 20.jpeg",
+        "description": "Full basement makeover including luxury laundry space, built-in entertainment shelving, and marble tile shower screens.",
+        "projectId": "Madani Executive Basement Suite"
+      },
+      {
+        "filename": "Madani Executive Basement Suite/33.jpeg",
+        "file": "33.jpeg",
+        "folderName": "Madani Executive Basement Suite",
+        "category": "renovations",
+        "title": "Madani Executive Basement Suite",
+        "alt": "Madani Executive Basement Suite - 33.jpeg",
+        "description": "Full basement makeover including luxury laundry space, built-in entertainment shelving, and marble tile shower screens.",
+        "projectId": "Madani Executive Basement Suite"
+      },
+      {
+        "filename": "Madani Executive Basement Suite/35.jpeg",
+        "file": "35.jpeg",
+        "folderName": "Madani Executive Basement Suite",
+        "category": "renovations",
+        "title": "Madani Executive Basement Suite",
+        "alt": "Madani Executive Basement Suite - 35.jpeg",
+        "description": "Full basement makeover including luxury laundry space, built-in entertainment shelving, and marble tile shower screens.",
+        "projectId": "Madani Executive Basement Suite"
+      },
+      {
+        "filename": "Madani Executive Basement Suite/36.jpeg",
+        "file": "36.jpeg",
+        "folderName": "Madani Executive Basement Suite",
+        "category": "renovations",
+        "title": "Madani Executive Basement Suite",
+        "alt": "Madani Executive Basement Suite - 36.jpeg",
+        "description": "Full basement makeover including luxury laundry space, built-in entertainment shelving, and marble tile shower screens.",
+        "projectId": "Madani Executive Basement Suite"
+      },
+      {
+        "filename": "Madani Executive Basement Suite/37.jpeg",
+        "file": "37.jpeg",
+        "folderName": "Madani Executive Basement Suite",
+        "category": "renovations",
+        "title": "Madani Executive Basement Suite",
+        "alt": "Madani Executive Basement Suite - 37.jpeg",
+        "description": "Full basement makeover including luxury laundry space, built-in entertainment shelving, and marble tile shower screens.",
+        "projectId": "Madani Executive Basement Suite"
+      },
+      {
+        "filename": "Madani Executive Basement Suite/42.jpeg",
+        "file": "42.jpeg",
+        "folderName": "Madani Executive Basement Suite",
+        "category": "renovations",
+        "title": "Madani Executive Basement Suite",
+        "alt": "Madani Executive Basement Suite - 42.jpeg",
+        "description": "Full basement makeover including luxury laundry space, built-in entertainment shelving, and marble tile shower screens.",
+        "projectId": "Madani Executive Basement Suite"
+      },
+      {
+        "filename": "Madani Executive Basement Suite/43.jpeg",
+        "file": "43.jpeg",
+        "folderName": "Madani Executive Basement Suite",
+        "category": "renovations",
+        "title": "Madani Executive Basement Suite",
+        "alt": "Madani Executive Basement Suite - 43.jpeg",
+        "description": "Full basement makeover including luxury laundry space, built-in entertainment shelving, and marble tile shower screens.",
+        "projectId": "Madani Executive Basement Suite"
+      },
+      {
+        "filename": "Madani Executive Basement Suite/45.jpeg",
+        "file": "45.jpeg",
+        "folderName": "Madani Executive Basement Suite",
+        "category": "renovations",
+        "title": "Madani Executive Basement Suite",
+        "alt": "Madani Executive Basement Suite - 45.jpeg",
+        "description": "Full basement makeover including luxury laundry space, built-in entertainment shelving, and marble tile shower screens.",
+        "projectId": "Madani Executive Basement Suite"
+      },
+      {
+        "filename": "Madani Executive Basement Suite/5.jpeg",
+        "file": "5.jpeg",
+        "folderName": "Madani Executive Basement Suite",
+        "category": "renovations",
+        "title": "Madani Executive Basement Suite",
+        "alt": "Madani Executive Basement Suite - 5.jpeg",
+        "description": "Full basement makeover including luxury laundry space, built-in entertainment shelving, and marble tile shower screens.",
+        "projectId": "Madani Executive Basement Suite"
+      },
+      {
+        "filename": "Madani Executive Basement Suite/6.jpeg",
+        "file": "6.jpeg",
+        "folderName": "Madani Executive Basement Suite",
+        "category": "renovations",
+        "title": "Madani Executive Basement Suite",
+        "alt": "Madani Executive Basement Suite - 6.jpeg",
+        "description": "Full basement makeover including luxury laundry space, built-in entertainment shelving, and marble tile shower screens.",
+        "projectId": "Madani Executive Basement Suite"
+      }
+    ]
+  },
+  {
+    "id": "Minimalist Maple Kitchen & Flooring",
+    "projectId": "Minimalist Maple Kitchen & Flooring",
+    "folderName": "Minimalist Maple Kitchen & Flooring",
+    "title": "Minimalist Maple Kitchen & Flooring",
+    "category": "flooring",
+    "coverImage": "19.jpeg",
+    "description": "Precision engineered maple flooring installed across living areas with matching threshold transition pieces.",
+    "images": [
+      {
+        "filename": "Minimalist Maple Kitchen & Flooring/19.jpeg",
+        "file": "19.jpeg",
+        "folderName": "Minimalist Maple Kitchen & Flooring",
+        "category": "flooring",
+        "title": "Minimalist Maple Kitchen & Flooring",
+        "alt": "Minimalist Maple Kitchen & Flooring - 19.jpeg",
+        "description": "Precision engineered maple flooring installed across living areas with matching threshold transition pieces.",
+        "projectId": "Minimalist Maple Kitchen & Flooring"
+      }
+    ]
+  },
+  {
+    "id": "Modern Glass Panel Staircase",
+    "projectId": "Modern Glass Panel Staircase",
+    "folderName": "Modern Glass Panel Staircase",
+    "title": "Modern Glass Panel Staircase",
+    "category": "renovations",
+    "coverImage": "1.jpeg",
+    "description": "Custom staircase transformation replacing traditional wood spindles with modern tempered glass panels and matte black railings.",
+    "images": [
+      {
+        "filename": "Modern Glass Panel Staircase/1.jpeg",
+        "file": "1.jpeg",
+        "folderName": "Modern Glass Panel Staircase",
+        "category": "renovations",
+        "title": "Modern Glass Panel Staircase",
+        "alt": "Modern Glass Panel Staircase - 1.jpeg",
+        "description": "Custom staircase transformation replacing traditional wood spindles with modern tempered glass panels and matte black railings.",
+        "projectId": "Modern Glass Panel Staircase"
+      }
+    ]
+  },
+  {
+    "id": "Modern Marble Freestanding Bath",
+    "projectId": "Modern Marble Freestanding Bath",
+    "folderName": "Modern Marble Freestanding Bath",
+    "title": "Modern Marble Freestanding Bath",
+    "category": "renovations",
+    "coverImage": "57.jpeg",
+    "description": "High-end master bath upgrade featuring modern oval freestanding tub, floor-mounted chrome faucet, and floor-to-ceiling marble wall tile.",
+    "images": [
+      {
+        "filename": "Modern Marble Freestanding Bath/56.jpeg",
+        "file": "56.jpeg",
+        "folderName": "Modern Marble Freestanding Bath",
+        "category": "renovations",
+        "title": "Modern Marble Freestanding Bath",
+        "alt": "Modern Marble Freestanding Bath - 56.jpeg",
+        "description": "High-end master bath upgrade featuring modern oval freestanding tub, floor-mounted chrome faucet, and floor-to-ceiling marble wall tile.",
+        "projectId": "Modern Marble Freestanding Bath"
+      },
+      {
+        "filename": "Modern Marble Freestanding Bath/57.jpeg",
+        "file": "57.jpeg",
+        "folderName": "Modern Marble Freestanding Bath",
+        "category": "renovations",
+        "title": "Modern Marble Freestanding Bath",
+        "alt": "Modern Marble Freestanding Bath - 57.jpeg",
+        "description": "High-end master bath upgrade featuring modern oval freestanding tub, floor-mounted chrome faucet, and floor-to-ceiling marble wall tile.",
+        "projectId": "Modern Marble Freestanding Bath"
+      },
+      {
+        "filename": "Modern Marble Freestanding Bath/58.jpeg",
+        "file": "58.jpeg",
+        "folderName": "Modern Marble Freestanding Bath",
+        "category": "renovations",
+        "title": "Modern Marble Freestanding Bath",
+        "alt": "Modern Marble Freestanding Bath - 58.jpeg",
+        "description": "High-end master bath upgrade featuring modern oval freestanding tub, floor-mounted chrome faucet, and floor-to-ceiling marble wall tile.",
+        "projectId": "Modern Marble Freestanding Bath"
+      },
+      {
+        "filename": "Modern Marble Freestanding Bath/59.jpeg",
+        "file": "59.jpeg",
+        "folderName": "Modern Marble Freestanding Bath",
+        "category": "renovations",
+        "title": "Modern Marble Freestanding Bath",
+        "alt": "Modern Marble Freestanding Bath - 59.jpeg",
+        "description": "High-end master bath upgrade featuring modern oval freestanding tub, floor-mounted chrome faucet, and floor-to-ceiling marble wall tile.",
+        "projectId": "Modern Marble Freestanding Bath"
+      },
+      {
+        "filename": "Modern Marble Freestanding Bath/60.jpeg",
+        "file": "60.jpeg",
+        "folderName": "Modern Marble Freestanding Bath",
+        "category": "renovations",
+        "title": "Modern Marble Freestanding Bath",
+        "alt": "Modern Marble Freestanding Bath - 60.jpeg",
+        "description": "High-end master bath upgrade featuring modern oval freestanding tub, floor-mounted chrome faucet, and floor-to-ceiling marble wall tile.",
+        "projectId": "Modern Marble Freestanding Bath"
+      }
+    ]
+  },
+  {
+    "id": "Modern Oak & Quartz Kitchen",
+    "projectId": "Modern Oak & Quartz Kitchen",
+    "folderName": "Modern Oak & Quartz Kitchen",
+    "title": "Modern Oak & Quartz Kitchen",
+    "category": "renovations",
+    "coverImage": "11.jpeg",
+    "description": "Full kitchen renovation featuring white shaker cabinetry, white quartz countertops, central white oak island, and chevron hardwood flooring.",
+    "images": [
+      {
+        "filename": "Modern Oak & Quartz Kitchen/11.jpeg",
+        "file": "11.jpeg",
+        "folderName": "Modern Oak & Quartz Kitchen",
+        "category": "renovations",
+        "title": "Modern Oak & Quartz Kitchen",
+        "alt": "Modern Oak & Quartz Kitchen - 11.jpeg",
+        "description": "Full kitchen renovation featuring white shaker cabinetry, white quartz countertops, central white oak island, and chevron hardwood flooring.",
+        "projectId": "Modern Oak & Quartz Kitchen"
+      },
+      {
+        "filename": "Modern Oak & Quartz Kitchen/29.jpeg",
+        "file": "29.jpeg",
+        "folderName": "Modern Oak & Quartz Kitchen",
+        "category": "renovations",
+        "title": "Modern Oak & Quartz Kitchen",
+        "alt": "Modern Oak & Quartz Kitchen - 29.jpeg",
+        "description": "Full kitchen renovation featuring white shaker cabinetry, white quartz countertops, central white oak island, and chevron hardwood flooring.",
+        "projectId": "Modern Oak & Quartz Kitchen"
+      }
+    ]
+  },
+  {
+    "id": "Open-Concept Living & Vinyl Flooring",
+    "projectId": "Open-Concept Living & Vinyl Flooring",
+    "folderName": "Open-Concept Living & Vinyl Flooring",
+    "title": "Open-Concept Living & Vinyl Flooring",
+    "category": "renovations",
+    "coverImage": "16.jpeg",
+    "description": "Living area remodeling highlighting structural beam removal for open floor plan paired with high-traffic luxury vinyl plank flooring.",
+    "images": [
+      {
+        "filename": "Open-Concept Living & Vinyl Flooring/13.jpeg",
+        "file": "13.jpeg",
+        "folderName": "Open-Concept Living & Vinyl Flooring",
+        "category": "renovations",
+        "title": "Open-Concept Living & Vinyl Flooring",
+        "alt": "Open-Concept Living & Vinyl Flooring - 13.jpeg",
+        "description": "Living area remodeling highlighting structural beam removal for open floor plan paired with high-traffic luxury vinyl plank flooring.",
+        "projectId": "Open-Concept Living & Vinyl Flooring"
+      },
+      {
+        "filename": "Open-Concept Living & Vinyl Flooring/14.jpeg",
+        "file": "14.jpeg",
+        "folderName": "Open-Concept Living & Vinyl Flooring",
+        "category": "renovations",
+        "title": "Open-Concept Living & Vinyl Flooring",
+        "alt": "Open-Concept Living & Vinyl Flooring - 14.jpeg",
+        "description": "Living area remodeling highlighting structural beam removal for open floor plan paired with high-traffic luxury vinyl plank flooring.",
+        "projectId": "Open-Concept Living & Vinyl Flooring"
+      },
+      {
+        "filename": "Open-Concept Living & Vinyl Flooring/16.jpeg",
+        "file": "16.jpeg",
+        "folderName": "Open-Concept Living & Vinyl Flooring",
+        "category": "renovations",
+        "title": "Open-Concept Living & Vinyl Flooring",
+        "alt": "Open-Concept Living & Vinyl Flooring - 16.jpeg",
+        "description": "Living area remodeling highlighting structural beam removal for open floor plan paired with high-traffic luxury vinyl plank flooring.",
+        "projectId": "Open-Concept Living & Vinyl Flooring"
+      }
+    ]
+  }
+];
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = PORTFOLIO_IMAGES;
+}
