@@ -594,31 +594,44 @@
         recipient:      'narminbm@gmail.com',
       };
 
+      const isLocalHost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
       try {
         let success = false;
-        try {
-          const res = await fetch('/api/contact', {
-            method:  'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body:    JSON.stringify(payload),
-          });
 
-          if (res.ok) {
-            const data = await res.json();
-            if (data && data.success) success = true;
+        // 1. If running locally with Node/Express backend, post to API
+        if (isLocalHost) {
+          try {
+            const res = await fetch('/api/contact', {
+              method:  'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body:    JSON.stringify(payload),
+            });
+
+            if (res.ok) {
+              const data = await res.json();
+              if (data && data.success) success = true;
+            }
+          } catch (apiErr) {
+            console.log('Local API error, attempting fallback:', apiErr);
           }
-        } catch (apiErr) {
-          // If Express API is unavailable (static host / Netlify), fallback below
         }
 
+        // 2. Netlify Production Submission (or fallback)
         if (!success) {
           const formData = new FormData(form);
+          if (!formData.get('form-name')) {
+            formData.append('form-name', 'contact');
+          }
+          const encodedBody = new URLSearchParams(formData).toString();
+
           const netlifyRes = await fetch('/', {
             method:  'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body:    new URLSearchParams(formData).toString(),
+            body:    encodedBody,
           });
-          if (netlifyRes.ok) {
+
+          if (netlifyRes.ok || netlifyRes.status === 200 || netlifyRes.status === 303) {
             success = true;
           }
         }
@@ -628,7 +641,7 @@
           form.reset();
           generateCaptcha();
         } else {
-          showFeedback('error-msg', 'Something went wrong. Please try again.');
+          showFeedback('error-msg', 'Submission could not be completed. Please try again.');
         }
       } catch (err) {
         showFeedback('error-msg', 'Network error. Please check your connection and try again.');
