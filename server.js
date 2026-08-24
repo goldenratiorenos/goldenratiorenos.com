@@ -130,7 +130,8 @@ function getDynamicProjects() {
 
 // Contact form API route
 app.post('/api/contact', (req, res) => {
-  const { name, email, phone, projectDetails } = req.body;
+  const { name, email, phone, projectDetails, recipient } = req.body;
+  const targetRecipient = recipient || 'narminbm@gmail.com';
 
   // Validate fields
   if (!name || typeof name !== 'string' || name.trim() === '') {
@@ -160,6 +161,8 @@ app.post('/api/contact', (req, res) => {
       message: 'Project details are required.'
     });
   }
+
+  console.log(`[Contact Form] New lead received for ${targetRecipient}: from ${name} (${email}, ${phone})`);
 
   return res.status(200).json({
     success: true,

@@ -427,6 +427,45 @@
   const form         = document.getElementById('contact-form');
   const submitBtn    = document.getElementById('submit-btn');
   const feedbackBox  = document.getElementById('form-feedback');
+  const captchaQuestionEl = document.getElementById('captcha-question');
+  const captchaAnswerEl   = document.getElementById('captcha-answer');
+  const captchaErrorEl    = document.getElementById('captcha-error');
+  const captchaRefreshBtn = document.getElementById('captcha-refresh-btn');
+
+  let currentCaptchaResult = null;
+
+  function generateCaptcha() {
+    if (!captchaQuestionEl) return;
+    const num1 = Math.floor(Math.random() * 8) + 2;
+    const num2 = Math.floor(Math.random() * 8) + 1;
+    const isAddition = Math.random() > 0.3;
+
+    if (isAddition) {
+      currentCaptchaResult = num1 + num2;
+      captchaQuestionEl.textContent = `${num1} + ${num2} = ?`;
+    } else {
+      const bigger = Math.max(num1, num2) + 2;
+      const smaller = Math.min(num1, num2);
+      currentCaptchaResult = bigger - smaller;
+      captchaQuestionEl.textContent = `${bigger} − ${smaller} = ?`;
+    }
+
+    if (captchaAnswerEl) {
+      captchaAnswerEl.value = '';
+      captchaAnswerEl.classList.remove('error');
+    }
+    if (captchaErrorEl) captchaErrorEl.textContent = '';
+  }
+
+  generateCaptcha();
+
+  if (captchaRefreshBtn) {
+    captchaRefreshBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      generateCaptcha();
+      if (captchaAnswerEl) captchaAnswerEl.focus();
+    });
+  }
 
   if (form && submitBtn && feedbackBox) {
     const btnText    = submitBtn.querySelector('.btn-text');
@@ -448,6 +487,24 @@
     }
 
     function validateField(name) {
+      if (name === 'captcha') {
+        if (!captchaAnswerEl) return true;
+        const val = captchaAnswerEl.value.trim();
+        if (!val) {
+          captchaAnswerEl.classList.add('error');
+          if (captchaErrorEl) captchaErrorEl.textContent = 'Please solve the security check.';
+          return false;
+        }
+        if (parseInt(val, 10) !== currentCaptchaResult) {
+          captchaAnswerEl.classList.add('error');
+          if (captchaErrorEl) captchaErrorEl.textContent = 'Incorrect answer. Please try again.';
+          return false;
+        }
+        captchaAnswerEl.classList.remove('error');
+        if (captchaErrorEl) captchaErrorEl.textContent = '';
+        return true;
+      }
+
       if (!fields[name] || !fields[name].el) return true;
       const { el, err } = fields[name];
       const val = el.value.trim();
@@ -487,6 +544,15 @@
       }
     });
 
+    if (captchaAnswerEl) {
+      captchaAnswerEl.addEventListener('blur', () => validateField('captcha'));
+      captchaAnswerEl.addEventListener('input', () => {
+        if (captchaAnswerEl.classList.contains('error')) {
+          validateField('captcha');
+        }
+      });
+    }
+
     function showFeedback(type, msg) {
       feedbackBox.classList.remove('hidden', 'success', 'error-msg');
       feedbackBox.classList.add(type);
@@ -510,7 +576,8 @@
       e.preventDefault();
       feedbackBox.classList.add('hidden');
 
-      const valid = Object.keys(fields).map(validateField).every(Boolean);
+      const isCaptchaValid = validateField('captcha');
+      const valid = Object.keys(fields).map(validateField).every(Boolean) && isCaptchaValid;
       if (!valid) {
         const firstError = form.querySelector('.error');
         if (firstError) firstError.focus();
@@ -524,6 +591,7 @@
         email:          fields.email.el.value.trim(),
         phone:          fields.phone.el.value.trim(),
         projectDetails: fields.projectDetails.el.value.trim(),
+        recipient:      'narminbm@gmail.com',
       };
 
       try {
@@ -556,8 +624,9 @@
         }
 
         if (success) {
-          showFeedback('success', '✓ Thank you! Your request has been received. Ali will be in touch within 24–48 hours.');
+          showFeedback('success', '✓ Thank you! Your request has been received. Our team will review your project and contact you at ' + payload.email + ' within 24–48 hours.');
           form.reset();
+          generateCaptcha();
         } else {
           showFeedback('error-msg', 'Something went wrong. Please try again.');
         }

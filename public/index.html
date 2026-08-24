@@ -261,8 +261,11 @@
 
           <div class="contact-form-container reveal reveal-delay-2">
             <!-- Lead Generation Form -->
-            <form id="contact-form" action="/api/contact" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+            <form id="contact-form" action="/api/contact" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" novalidate>
               <input type="hidden" name="form-name" value="contact">
+              <input type="hidden" name="_to" value="narminbm@gmail.com">
+              <input type="hidden" name="recipient" value="narminbm@gmail.com">
+              <input type="hidden" name="_subject" value="New Quote Request - Golden Ratio Renos">
               <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
               <p class="form-instructions">All fields are required to help us prepare your consultation details.</p>
 
@@ -326,6 +329,29 @@
                   aria-required="true"
                 ></textarea>
                 <span class="field-error" id="projectDetails-error" aria-live="polite"></span>
+              </div>
+
+              <!-- Field 5: Security Captcha Verification -->
+              <div class="form-group captcha-group">
+                <label for="captcha-answer" id="captcha-label">
+                  Security Check: <span id="captcha-question" class="captcha-badge">Calculating...</span>
+                </label>
+                <div class="captcha-input-wrapper">
+                  <input
+                    type="text"
+                    id="captcha-answer"
+                    name="captchaAnswer"
+                    required
+                    autocomplete="off"
+                    placeholder="Enter answer"
+                    aria-required="true"
+                    aria-labelledby="captcha-label"
+                  >
+                  <button type="button" id="captcha-refresh-btn" class="captcha-refresh-btn" aria-label="Refresh security question" title="Refresh question">
+                    ↻
+                  </button>
+                </div>
+                <span class="field-error" id="captcha-error" aria-live="polite"></span>
               </div>
 
               <!-- Submit Button -->
